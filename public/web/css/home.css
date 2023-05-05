@@ -742,6 +742,10 @@ div #accordion {
         margin-bottom: 36px;
     }
 
+    .homeServiceBox {
+        width: auto;
+    }
+
     /* seo service */
     .seoServiceLeftBox {
         margin: 72px 75px;
@@ -817,6 +821,13 @@ div #accordion {
     }
 
     /* seo service */
+    .seoServiceLeftBox {
+        margin: 72px 21px;
+    }
+
+    .seoServiceLeftTitle {
+        margin-bottom: 36px;
+    }
 
     .homeMarketingRow {
         margin-top: 18px;

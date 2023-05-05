@@ -5,5 +5,6 @@
 <script>
     $("#hamburger").on("click", function() {
         $("#menuMobile").toggleClass('active');
+        $("#bodyContent").toggleClass('overflow-hidden');
     });
 </script>

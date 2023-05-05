@@ -3,7 +3,7 @@
 @include('layouts.web.head')
 @yield('style')
 
-<body>
+<body id="bodyContent">
     @include('layouts.web.header-pc')
     @include('layouts.web.header-mobile')
     @yield('content')

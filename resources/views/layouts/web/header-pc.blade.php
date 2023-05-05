@@ -16,7 +16,7 @@
                 <li><a href="#">Liên hệ</a></li>
             </ul>
             <div class="btnContain">
-                <button class="btn headerContactBtn">Gọi nhanh: 0934012896</button>
+                <a href="tel:0934012896" class="btn headerContactBtn">Gọi nhanh: 0934012896</a>
             </div>
         </div>
 
