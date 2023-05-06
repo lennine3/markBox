@@ -1,7 +1,14 @@
 @extends('layouts.web.app')
+@section('title')
+    {{ @$generals['SHOP']['seo_title'] ? @$generals['SHOP']['seo_title'] : @$generals['SHOP']['web_name'] }}
+@endsection
 
 @section('style')
     <link rel="stylesheet" href="{{ asset('web/assets/css/home.css') }}">
+@endsection
+
+@section('meta')
+    @include('meta.home-meta')
 @endsection
 
 @section('content')
@@ -12,7 +19,7 @@
     </section>
     <section class="aboutUsSection" id="aboutUsSection">
         <div class="aboutUsContain container">
-            <h2 class="titleText">Xin chào bạn</h2>
+            <h1 class="titleText">Xin chào bạn</h1>
             <div class="aboutUsBox">
                 <div class="descText">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the

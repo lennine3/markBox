@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<title>@yield('title')</title>
+@yield('meta')
 @include('layouts.web.head')
 @yield('style')
 

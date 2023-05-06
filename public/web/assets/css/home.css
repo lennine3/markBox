@@ -665,7 +665,7 @@ div #accordion {
     text-align: left;
     position: relative;
     width: 330px;
-    height: 535px;
+    /* height: 535px; */
     transition: .3s all;
 }
 
@@ -853,10 +853,12 @@ div #accordion {
     .seoServiceRightContain {
         padding: 60px 21px;
     }
-    .serviceCategoryRow{
+
+    .serviceCategoryRow {
         margin-left: -5px;
         margin-right: -5px;
     }
+
     .seoServiceLeftBox {
         margin: 72px 26px;
     }
@@ -900,6 +902,10 @@ div #accordion {
     .quotationDesc {
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+    .pricingTableFeatures {
+        margin-bottom: 48px;
     }
 
     /* Blog contain */

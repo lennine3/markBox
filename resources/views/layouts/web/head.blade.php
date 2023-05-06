@@ -4,7 +4,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Shoex</title>
     <link rel="icon" type="image/x-icon" href="{{ show_favicon('favicon.ico') }}" />
     <link rel="stylesheet" href="{{ asset('admin/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('web/assets/css/slick/slick.css') }}">

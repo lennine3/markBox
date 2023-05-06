@@ -44,9 +44,11 @@ class AppServiceProvider extends ServiceProvider
                 $logo = Cache::rememberForever('logo_path_cache', function () {
                     return show_logo();
                 });
+                $current_link = url()->current();
                 $view->with([
                     'logo' => $logo,
                     'generals' => $generals,
+                    'current_link'=>$current_link.'/',
                 ]);
             }
         );
