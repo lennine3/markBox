@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AjaxHomeController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -14,24 +15,16 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/', HomeController::class, 'home')->name('home');
-// Route::get('/','HomeController@home')->name('home');
-Route::get('/', [HomeController::class, 'home'])->name('home');
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
-// require __DIR__.'/auth.php';
-
+// Auth route
 Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', function () {
     Auth::logout();
     return redirect('/');
 })->name('logout');
+
+
+
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/','home')->name('home');
+    Route::post('/process-contact', 'processContact')->name('home.process.contact');
+});

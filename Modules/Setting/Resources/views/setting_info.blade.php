@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <div>
+        <div class="mb-4">
             <div class="d-flex justify-content-start">
                 <div class="position-relative">
                     <div class="position-absolute labelIcon">
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <div class="mt-4">
+        <div class="mb-4">
             <p>Favicon</p>
             <div class="d-flex justify-content-start">
                 <div class="position-relative">
@@ -36,6 +36,46 @@
                         <img src="{{ show_favicon('favicon.ico') }}" alt="">
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="form-group mb-3">
+                <label for="websiteName" class="form-label">Tên website</label>
+                <input type="text" class="form-control" id="websiteName" name="SHOP[web_name]"
+                    value="{{ @$shop['web_name'] }}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="workingTime" class="form-label">Thời gian làm việc</label>
+                <input class="form-control" type="text" name="SHOP[working_time]" id="workingTime"
+                    value="{{ @$shop['working_time'] }}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input class="form-control" type="email" name="SHOP[email]" id="email"
+                    value="{{ @$shop['email'] }}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="business_name" class="form-label">Tên GPKD</label>
+                <input class="form-control" type="text" name="SHOP[business_name]" id="business_name"
+                    value="{{ @$shop['business_name'] }}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="phone" class="form-label">Số điện thoại</label>
+                <input class="form-control" type="text" name="SHOP[phone]" id="phone"
+                    value="{{ @$shop['phone'] }}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="address" class="form-label">Địa chỉ</label>
+                <input class="form-control" type="text" name="SHOP[address]" id="address"
+                    value="{{ @$shop['address'] }}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="gg_maps" class="form-label">Nhúng Google Map</label>
+                <textarea type="text" cols="30" rows="5" class="form-control" id="gg_maps" name="SHOP[gg_maps]">{{ @$shop['gg_maps'] }}</textarea>
+            </div>
+            <div class="form-group mb-3">
+                <label for="footer_text" class="form-label">Footer text</label>
+                <textarea type="text" cols="30" rows="5" class="form-control" id="footer_text" name="SHOP[footer_text]">{{ @$shop['footer_text'] }}</textarea>
             </div>
         </div>
     </div>

@@ -7,16 +7,16 @@
                 </div>
             </div>
             <ul>
-                <li><a href="#">Về chúng tôi</a></li>
-                <li><a href="#">Dịch vụ marketing</a></li>
+                <li><a href="/#aboutUsSection">Về chúng tôi</a></li>
+                <li><a href="/#homeMarketingSection">Dịch vụ marketing</a></li>
                 <li>
-                    <a href="#">Bảng giá dịch vụ</a>
+                    <a href="/#pricingTableSetion">Bảng giá dịch vụ</a>
                 </li>
-                <li><a href="#">Blog marketing</a></li>
-                <li><a href="#">Liên hệ</a></li>
+                <li><a href="/#blogMarketing">Blog marketing</a></li>
+                <li><a href="/#formContactSection">Liên hệ</a></li>
             </ul>
             <div class="btnContain">
-                <a href="tel:0934012896" class="btn headerContactBtn">Gọi nhanh: 0934012896</a>
+                <a href="tel:{{ $generals['SHOP']['phone'] }}" class="btn headerContactBtn">Gọi nhanh: {{ $generals['SHOP']['phone'] }}</a>
             </div>
         </div>
 

@@ -1,3 +1,14 @@
+/* Main */
+.invalid-home {
+    color: #fff;
+    font-style: italic;
+}
+
+.is-invalid-input {
+    color: red;
+}
+
+/* Banner */
 .bannerContain {
     height: 700px;
 }
@@ -87,6 +98,11 @@
     border-radius: 12px;
 }
 
+.bigFrame img {
+    width: 100%;
+    height: 100%;
+}
+
 .bigFrameContain {
     display: flex;
     justify-content: end;
@@ -101,7 +117,6 @@
 .bigFrameBox img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
 }
 
 .bigFrameBtnBox {
@@ -157,6 +172,11 @@
     border-radius: 12px;
 }
 
+.thirdFrame img {
+    height: 100%;
+    width: 100%;
+}
+
 .thirdFrameBox {
     width: 192.35px;
     height: 208px;
@@ -166,7 +186,6 @@
 .thirdFrameBox img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
 }
 
 .thirdFrameRightBox {
@@ -254,11 +273,13 @@
 }
 
 .homeMarketingBoxImg {
+    border-radius: 12px;
     height: 250px;
     width: 350px;
 }
 
 .homeMarketingBoxImg img {
+    border-radius: 12px;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -623,7 +644,7 @@ div #accordion {
 
 .pricingList {
     padding: 0;
-    list-style-image: url('../assets/image/logo/check.svg');
+    list-style-image: url('../../assets/image/logo/check.svg');
     list-style-position: inside;
     margin: 16px auto;
 }
@@ -694,7 +715,7 @@ div #accordion {
     border: 1px solid #FF3767;
 }
 
-.pricingContainer {
+/* .pricingContainer {
     max-height: 710px;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
@@ -703,7 +724,7 @@ div #accordion {
 .pricingContainer.open {
     max-height: 1420px;
     transition: max-height 0.5s ease-in-out;
-}
+} */
 
 /* media screen from 1024 above PC */
 @media only screen and (min-width: 1025px) {
@@ -820,7 +841,22 @@ div #accordion {
         margin-bottom: 36px;
     }
 
+    .homeMarketingBoxTitle {
+        margin-bottom: 8px;
+    }
+
+    .homeMarketingBoxDesc {
+        margin-bottom: 8px;
+    }
+
     /* seo service */
+    .seoServiceRightContain {
+        padding: 60px 21px;
+    }
+    .serviceCategoryRow{
+        margin-left: -5px;
+        margin-right: -5px;
+    }
     .seoServiceLeftBox {
         margin: 72px 21px;
     }
@@ -829,12 +865,34 @@ div #accordion {
         margin-bottom: 36px;
     }
 
+    .seoServiceRightContain .row .col-6 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
     .homeMarketingRow {
         margin-top: 18px;
     }
 
+    .bigFrameBox {
+        width: 179px;
+        height: 219px;
+    }
+
+    .bigFrame {
+        width: 179px;
+        height: 219px;
+    }
+
     .secondFrame {
-        margin-bottom: 18px;
+        width: 179px;
+        height: 73px;
+        margin-bottom: 16px;
+    }
+
+    .thirdFrame {
+        width: 179px;
+        height: 129px;
     }
 
     /* pricing table */

@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/css/dark/elements/infobox.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/css/light/elements/infobox.css') }}">
     <style>
+        .widget-header {
+            padding-top: 25px !important;
+        }
+
         .favIconContain {
             width: 50px;
             height: 50px;
@@ -83,7 +87,7 @@
         <div class="row layout-top-spacing">
             <form action="#" id="formSetting" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="col-xl-12">
+                <div class="col-xl-12 mb-4">
                     <div class="statbox widget box box-shadow">
                         <div class="widget-header">
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
@@ -101,6 +105,22 @@
                                             @include('setting::setting_seo')
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                <h4>Social</h4>
+                            </div>
+                        </div>
+                        <div class="widget-content widget-content-area">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-8 mx-auto">
+                                    @include('setting::setting_social')
                                 </div>
                             </div>
                         </div>

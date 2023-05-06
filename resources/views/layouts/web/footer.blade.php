@@ -10,11 +10,11 @@
                 <div class="footerDescText"> Theo dõi chúng tôi tại </div>
                 <div class="d-flex justify-content-end socialContain">
                     <div>
-                        <a href="#" class="socialTextFooter"><img
+                        <a href="{{ @$generals['SOCIAL']['facebook'] }}" class="socialTextFooter"><img
                                 src="{{ asset('web/assets/image/logo/face.svg') }}" alt=""></a>
                     </div>
                     <div class="socialIconBox">
-                        <a href="#" class="socialTextFooter"><img
+                        <a href="{{ @$generals['SOCIAL']['instagram'] }}" class="socialTextFooter"><img
                                 src="{{ asset('web/assets/image/logo/insta.svg') }}" alt=""></a>
                     </div>
                 </div>
@@ -23,11 +23,11 @@
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div>
-                    <div class="footerDescText"><b>MARK BOX - MARKETING KHỞI NGHIỆP</b></div>
-                    <div class="footerDescText"><b>Thời gian làm việc:</b> Thứ 2 ~ Thứ 7 08:30 ~ 17:00 (Chủ nhật và ngày
-                        lễ nghỉ)</div>
-                    <div class="footerDescText"><b>Chăm sóc khách hàng:</b> 0934012896</div>
-                    <div class="footerDescText"><b>Email:</b> xinchao@markbox.vn </div>
+                    <div class="footerDescText"><b>{{ $generals['SHOP']['web_name'] }}</b></div>
+                    <div class="footerDescText"><b>Thời gian làm việc:</b> {{ $generals['SHOP']['working_time'] }}</div>
+                    <div class="footerDescText"><b>Chăm sóc khách hàng:</b> <a class="footerDescText"
+                            href="tel:{{ $generals['SHOP']['phone'] }}"> {{ $generals['SHOP']['phone'] }}</a></div>
+                    <div class="footerDescText"><b>Email:</b> {{ $generals['SHOP']['email'] }} </div>
                 </div>
                 <div class="socialLogoMobile">
                     <div class="footerDescText footerWebDesign"> Dịch vụ thiết kế website </div>
@@ -42,10 +42,11 @@
                         <div class="footerDescText"> Theo dõi chúng tôi tại </div>
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-6">
-                                <a href="#" class="socialTextFooter">Facebook</a>
+                                <a href="{{ @$generals['SOCIAL']['facebook'] }}" class="socialTextFooter">Facebook</a>
                             </div>
                             <div class="col-lg-6 col-md-6 col-6">
-                                <a href="#" class="socialTextFooter">Instagram</a>
+                                <a href="{{ @$generals['SOCIAL']['instagram'] }}"
+                                    class="socialTextFooter">Instagram</a>
                             </div>
                         </div>
                         <div class="footerDescText footerWebDesign"> Dịch vụ thiết kế website </div>
@@ -60,6 +61,6 @@
 </footer>
 <div class="copyRight">
     <div class="d-flex justify-content-center">
-        Mark Box Copyright &#169; 2023
+        {{ $generals['SHOP']['coppyright'] }}
     </div>
 </div>

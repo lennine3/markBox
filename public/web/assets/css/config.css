@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'Inter Regular';
-    src: url('../fonts/Inter/Inter-Regular.ttf');
+    src: url('../../fonts/Inter/Inter-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Inter Bold';
-    src: url('../fonts/Inter/Inter-Bold.ttf');
+    src: url('../../fonts/Inter/Inter-Bold.ttf');
 }
 
 @font-face {
     font-family: 'Inter SemiBold';
-    src: url('../fonts/Inter/Inter-SemiBold.ttf');
+    src: url('../../fonts/Inter/Inter-SemiBold.ttf');
 }
 
 :root {

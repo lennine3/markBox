@@ -1,7 +1,7 @@
 @extends('layouts.web.app')
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('web/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/assets/css/home.css') }}">
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
             <img src="{{ asset('web/assets/image/home/banner.png') }}" alt="">
         </div>
     </section>
-    <section class="aboutUsSection">
+    <section class="aboutUsSection" id="aboutUsSection">
         <div class="aboutUsContain container">
             <h2 class="titleText">Xin chào bạn</h2>
             <div class="aboutUsBox">
@@ -65,7 +65,7 @@
             </div>
             <div class="col-lg-8 px-0 col-sm-12">
                 <div class="d-flex justify-content-center seoServiceRightContain">
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="bigFrameContain">
                                 <div class="bigFrame">
@@ -112,12 +112,38 @@
                                 </div>
                             </div>
                         </div>
+                    </div> --}}
+                    <div class="row">
+                        <div class="col-lg-6 col-6">
+                            <div class="d-flex justify-content-end">
+                                <div class="bigFrame">
+                                    <img src="{{ asset('web/assets/image/home/seoService/firstFrame.webp') }}"
+                                        alt="First big frame image" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-6">
+                            <div class="row serviceCategoryRow">
+                                <div class="col-lg-12 px-0">
+                                    <div class="secondFrame">
+                                        <img src="{{ asset('web/assets/image/home/seoService/secondFrame.webp') }}"
+                                            alt="Second frame image" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 px-0">
+                                    <div class="thirdFrame">
+                                        <img src="{{ asset('web/assets/image/home/seoService/thirdFrame.webp') }}"
+                                            alt="Third frame image" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="homeMarketing">
+    <section id="homeMarketingSection">
         <div class="homeMarketingContainer container">
             <div class=" text-center">
                 <div class="d-flex justify-content-center">
@@ -161,7 +187,7 @@
             </div>
         </div>
     </section>
-    <section id="SeoQuotation">
+    <section id="pricingTableSetion">
         <div class="quotationContain">
             <div class=" text-center">
                 <h2 class="quotationTitle titleText"> Bảng giá dịch vụ marketing </h2>
@@ -177,7 +203,7 @@
             <div class="pricingContain">
                 <div class="pricingContainer">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 blog pricingMobileContain">
+                        <div class="col-lg-4 col-md-6 pricingMobileContain">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -213,7 +239,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 blog pricingMobileContain">
+                        <div class="col-lg-4 col-md-6 pricingMobileContain">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -249,7 +275,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 blog pricingMobileContain">
+                        <div class="col-lg-4 col-md-6 pricingMobileContain">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -283,7 +309,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 blog pricingMobileContain ">
+                        <div class="col-lg-4 col-md-6 pricingMobileContain hidden" id="pricingHid_1">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -319,7 +345,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 blog pricingMobileContain ">
+                        <div class="col-lg-4 col-md-6 pricingMobileContain hidden" id="pricingHid_2">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -355,7 +381,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 blog pricingMobileContain ">
+                        <div class="col-lg-4 col-md-6 pricingMobileContain hidden" id="pricingHid_3">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -399,8 +425,8 @@
             </div>
         </div>
     </section>
-    <section class="container blogContainer blogContain" id="blog">
-        <h2 class="titleText blogHeadTitle"> Blog marketing </h2>
+    <section class="container blogContainer blogContain" id="blogMarketing">
+        <h2 class="titleText blogHeadTitle">Blog marketing </h2>
         <div class="descText"> Chia sẻ kinh nghiệm chọn mua xe ô tô và hướng dẫn cách chăm sóc xế yêu của bạn </div>
 
         @php
@@ -423,40 +449,56 @@
             </div>
         </div>
     </section>
-    <section>
+    <section id="formContactSection">
         <div class="homeFormContain d-flex homeBlock">
             <div class="homeBlock d-flex align-items-center justify-content-center">
                 <div class="homeFormBox">
                     <h2 class="homeFormTitle titleText"> Điền thông tin tư vấn </h2>
                     <div class="homeBlock formContainInputMobile d-flex justify-content-center">
-                        <form id="formContact" name="formContact" method="POST" action="#" class="form validate">
-                            <input type="hidden" name="_token" value="LBq4FjICU2W9O3P6LwdBctvQYgmIShjQaKqNjVNG">
+                        <form id="formContact" name="formContact" method="POST" class="form validate">
+                            @csrf
                             <div class="homeFormInputContain position-relative">
-                                <input type="text" placeholder="Tên của bạn" name="fullname"
+                                <input type="text" placeholder="Tên của bạn" name="full_name"
                                     class="homeFormInput form-control">
                                 <span class="homeFormInputIcon">(*)</span>
                             </div>
                             <div class="homeFormInputContain position-relative">
                                 <input type="text" placeholder="Số điện thoại liên hệ"
-                                    class="homeFormInput form-control" name="phone">
-                                <span class="homeFormInputIcon">(*)</span>
+                                    class="homeFormInput form-control" name="phone" id="phone-Input"
+                                    autocomplete="off">
+                                <span class="homeFormInputIcon" id="phone-required">(*)</span>
+                                <span class="invalid-feedback invalid-home" id="phone-error">lỗi</span>
                             </div>
                             <div class="position-relative">
-                                <input type="text" placeholder="Email nhận thông tin"
+                                <input type="email" placeholder="Email nhận thông tin"
                                     class="homeFormInput form-control" name="email">
                                 <span class="homeFormInputIcon">(*)</span>
                             </div>
                             <div class="homeFormNoteContain">
-                                <div class="homeFormNote"> Vui lòng ghi chú khung giờ bạn muốn chúng tôi liên hệ </div>
+                                <div class="homeFormNote"> Vui lòng chọn dịch vụ mà bạn cần tư vấn </div>
                                 <div class="select-wrapper">
-                                    <select name="timeSelect" class="iconSelect homeFormSelect">
-                                        <option value="9:00 - 12:00">9:00 - 12:00</option>
-                                        <option value="13:30 - 17:00">13:30 - 17:00</option>
+                                    <select name="service" class="iconSelect homeFormSelect">
+                                        <option value="Kế hoạch marketing thương hiệu tổng thể">
+                                            Tư vấn chiến lược marketing thương hiệu
+                                        </option>
+                                        <option value="Kế hoạch marketing thương hiệu tổng thể">
+                                            Dịch vụ sáng tạo nội dung mạng xã hội
+                                        </option>
+                                        <option value="Kế hoạch marketing thương hiệu tổng thể">
+                                            Dịch vụ thiết kế nhận diện thương hiệu
+                                        </option>
+                                        <option value="Kế hoạch marketing thương hiệu tổng thể">
+                                            Dịch vụ thiết kế web
+                                        </option>
+                                        <option value="Kế hoạch marketing thương hiệu tổng thể">
+                                            Dịch vụ SEO content
+                                        </option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="homeFormNote"> Chúng tôi sẽ liên hệ với quý khách trong vòng 24h sau khi nhận yêu
-                                cầu. </div>
+                            <div class="homeFormNote">
+                                Chúng tôi sẽ liên hệ với quý khách trong vòng 24h sau khi nhận yêu cầu.
+                            </div>
                             <div class="homeFormButtonContain">
                                 <button class="btn homeFormButton" type="submit"> Gửi thông tin </button>
                             </div>
@@ -505,53 +547,5 @@
     </section>
 @endsection
 @section('script')
-    <script>
-        const container = document.querySelector('.pricingContainer');
-        const showMoreBtn = document.getElementById('show-more');
-
-        showMoreBtn.addEventListener('click', function() {
-            container.classList.toggle('open');
-            if (container.classList.contains('open')) {
-                container.style.maxHeight = container.scrollHeight + "px";
-            } else {
-                container.style.maxHeight = "700px";
-            }
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.blog-slider').slick({
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                slidesMargin: 30,
-                arrows: false,
-                autoplay: true,
-                autoplaySpeed: 5000,
-                responsive: [{
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2,
-                            infinite: true,
-                            dots: true
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
+    <script src="{{ asset('web/assets/js/home.js') }}"></script>
 @endsection

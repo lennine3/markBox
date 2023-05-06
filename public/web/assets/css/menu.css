@@ -76,20 +76,21 @@
 
 .headerContactBtn {
     background-color: #FF3767;
-    color: #fff!important;
+    color: #fff !important;
     border-radius: 4px;
-    padding: 6px 12px!important;
+    padding: 6px 12px !important;
 }
 
 .headerContactBtn:hover {
-    background-color: #fff!important;
+    background-color: #fff !important;
     border: 1px solid #FF3767;
-    color: #FF3767!important;
+    color: #FF3767 !important;
 }
 
 /* mobile header */
 body .menuMobile ul.active {
     position: fixed;
+    text-align: center;
 }
 
 .headerMobile {
@@ -131,6 +132,7 @@ body .menuMobile ul.active {
 
 .menuMobile li {
     margin: 0 10px;
+    padding: 10px 0;
 }
 
 .menuMobile a {
