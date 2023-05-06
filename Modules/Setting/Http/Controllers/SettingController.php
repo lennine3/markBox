@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Setting\Entities\Setting;
 use App\Libraries\Upload;
+use Illuminate\Support\Facades\Cache;
 
 class SettingController extends Controller
 {
@@ -57,6 +58,7 @@ class SettingController extends Controller
             // $file2 = request()->file('favicon_2');
             // $file2->move(base_path(), 'favicon.ico');
         }
+        Cache::flush();
         return response()->json([
             'success' => true,
             'toastr' => trans('Setting::setting.toastr_success'),
