@@ -25,6 +25,7 @@ Route::get('/logout', function () {
 
 
 Route::controller(HomeController::class)->group(function () {
-    Route::get('/','home')->name('home');
+    Route::get('/', 'home')->name('home');
     Route::post('/process-contact', 'processContact')->name('home.process.contact');
+    Route::get('/clear-cache', 'clearCache')->name('home.clear-cache');
 });

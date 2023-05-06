@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Modules\Setting\Entities\Setting;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
@@ -68,5 +69,10 @@ class HomeController extends Controller
         //     $message->subject('Gửi feedback thành công');
         // });
         return response()->json(['success' => 'Cảm ơn bạn đã gửi phản hồi đến chúng tôi.','message'=>'success']);
+    }
+    public function clearCache()
+    {
+        Cache::flush();
+        return redirect()->back();
     }
 }
