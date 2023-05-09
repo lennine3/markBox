@@ -210,7 +210,7 @@
             <div class="pricingContain">
                 <div class="pricingContainer">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 pricingMobileContain">
+                        <div class="col-lg-4 col-md-6 pricingBox">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -246,7 +246,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 pricingMobileContain">
+                        <div class="col-lg-4 col-md-6 pricingBox">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -282,7 +282,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 pricingMobileContain">
+                        <div class="col-lg-4 col-md-6 pricingBox">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -316,7 +316,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 pricingMobileContain hidden" id="pricingHid_1">
+                        <div class="col-lg-4 col-md-6 pricingBox hidden" id="pricingHid_1">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -352,7 +352,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 pricingMobileContain hidden" id="pricingHid_2">
+                        <div class="col-lg-4 col-md-6 pricingBox hidden" id="pricingHid_2">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -388,7 +388,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 pricingMobileContain hidden" id="pricingHid_3">
+                        <div class="col-lg-4 col-md-6 pricingBox hidden" id="pricingHid_3">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -456,7 +456,7 @@
             </div>
         </div>
     </section>
-    <section id="formContactSection">
+    {{-- <section id="formContactSection">
         <div class="homeFormContain d-flex homeBlock">
             <div class="homeBlock d-flex align-items-center justify-content-center">
                 <div class="homeFormBox">
@@ -514,7 +514,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <section class="faqBackground" id="FAQ">
         <div class="container faqContainer">
             <div class="homeFormBox">

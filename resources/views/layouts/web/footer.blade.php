@@ -23,18 +23,18 @@
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div>
-                    <div class="footerDescText"><b>{{ $generals['SHOP']['web_name'] }}</b></div>
-                    <div class="footerDescText"><b>Thời gian làm việc:</b> {{ $generals['SHOP']['working_time'] }}</div>
+                    <div class="footerDescText"><b>{{ @$generals['SHOP']['web_name'] }}</b></div>
+                    <div class="footerDescText"><b>Thời gian làm việc:</b> {{ @$generals['SHOP']['working_time'] }}</div>
                     <div class="footerDescText"><b>Chăm sóc khách hàng:</b> <a class="footerDescText"
-                            href="tel:{{ $generals['SHOP']['phone'] }}"> {{ $generals['SHOP']['phone'] }}</a></div>
+                            href="tel:{{ @$generals['SHOP']['phone'] }}"> {{ @$generals['SHOP']['phone'] }}</a></div>
                     <div class="footerDescText"><b>Email:</b> {{ $generals['SHOP']['email'] }} </div>
                 </div>
-                <div class="socialLogoMobile">
+                {{-- <div class="socialLogoMobile">
                     <div class="footerDescText footerWebDesign"> Dịch vụ thiết kế website </div>
                     <div>
                         <img src="{{ asset('web/assets/image/logo/footerWeb.png') }}" alt="">
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="col-lg-6 col-md-6 ourPartnerContainMobile socialInfoBox">
                 <div class="LeftInfo">
@@ -49,10 +49,10 @@
                                     class="socialTextFooter">Instagram</a>
                             </div>
                         </div>
-                        <div class="footerDescText footerWebDesign"> Dịch vụ thiết kế website </div>
+                        {{-- <div class="footerDescText footerWebDesign"> Dịch vụ thiết kế website </div>
                         <div>
                             <img src="{{ asset('web/assets/image/logo/footerWeb.png') }}" alt="">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

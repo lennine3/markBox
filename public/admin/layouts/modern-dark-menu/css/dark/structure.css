@@ -1225,7 +1225,7 @@ body.dark #sidebar ul.menu-categories ul.submenu > li ul.sub-submenu > li a {
   letter-spacing: 1px;
 }
 body.dark #sidebar ul.menu-categories ul.submenu > li ul.sub-submenu > li.active a {
-  color: #fff;
+  color: #009688;
 }
 body.dark #sidebar ul.menu-categories ul.submenu > li ul.sub-submenu > li a:hover {
   color: #009688;

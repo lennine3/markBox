@@ -15,4 +15,5 @@
     <link rel="stylesheet" href="{{ asset('web/assets/css/menu.css') }}">
     <link rel="stylesheet" href="{{ asset('web/assets/css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('web/assets/css/success-modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/assets/css/toolchat-mobile.css') }}">
 </head>

@@ -1,5 +1,6 @@
 {
     "Administration": true,
     "User": true,
-    "Setting": true
+    "Setting": true,
+    "Blog": true
 }

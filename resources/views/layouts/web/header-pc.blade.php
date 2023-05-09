@@ -3,7 +3,9 @@
         <div class="d-flex justify-content-between">
             <div class="logoContain">
                 <div class="logoBox">
-                    <img src="{{ asset('web/assets/image/logo/headerLogo.png') }}" alt="">
+                    <a href="{{ route('home') }}">
+                        <img src="{{ asset('web/assets/image/logo/headerLogo.png') }}" alt="">
+                    </a>
                 </div>
             </div>
             <ul>
@@ -16,7 +18,8 @@
                 <li><a href="/#formContactSection">Liên hệ</a></li>
             </ul>
             <div class="btnContain">
-                <a href="tel:{{ $generals['SHOP']['phone'] }}" class="btn headerContactBtn">Gọi nhanh: {{ $generals['SHOP']['phone'] }}</a>
+                <a href="tel:{{ $generals['SHOP']['phone'] }}" class="btn headerContactBtn">Gọi nhanh:
+                    {{ $generals['SHOP']['phone'] }}</a>
             </div>
         </div>
 

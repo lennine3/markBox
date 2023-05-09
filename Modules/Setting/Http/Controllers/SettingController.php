@@ -23,7 +23,6 @@ class SettingController extends Controller
         foreach ($settings as $setting) {
             $generals[$setting->type] = unserialize($setting->data);
         }
-        // dd($generals);
         return view('setting::index', ['generals' => $generals]);
     }
 
@@ -32,7 +31,6 @@ class SettingController extends Controller
         $inputs = request()->except(['_token','image','favicon']);
         foreach ($inputs as $type => $input) {
             $item = $this->setting->get_type_setting($type);
-            // dd($type);
             $setting = !empty($item) ? $item : new Setting();
             $setting->type = $type;
 
@@ -52,11 +50,7 @@ class SettingController extends Controller
         }
         if (request()->hasFile('favicon')) {
             $file = request()->file('favicon');
-            // $file->move(public_path('/storage'), 'favicon.ico');
             $file->move(base_path(), 'favicon.ico');
-
-            // $file2 = request()->file('favicon_2');
-            // $file2->move(base_path(), 'favicon.ico');
         }
         Cache::flush();
         return response()->json([

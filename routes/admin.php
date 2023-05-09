@@ -12,5 +12,7 @@ use Illuminate\Support\Facades\Response;
 
 Route::prefix('admin')->middleware(['auth','RegisterAdminMenuServiceProvider'])->group(function () {
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+    Route::get('/home','AdminController@homePage')->name('admin.home-setting');
+    Route::post('/process-faq','AdminController@processFaqQuestion')->name('admin.process.faq');
 });
 

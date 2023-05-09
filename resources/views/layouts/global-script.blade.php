@@ -12,6 +12,7 @@
 {{-- <script src="{{ asset('admin/assets/js/components/notification/custom-snackbar.js') }}"></script> --}}
 {{-- feather icon --}}
 <script src="{{ asset('admin/plugins/src/font-icons/feather/feather.min.js') }}"></script>
+<script src="{{ asset('web/assets/js/toastr/toastr.min.js') }}"></script>
 <script>
     feather.replace()
 </script>

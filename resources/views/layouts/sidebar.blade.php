@@ -5,12 +5,12 @@
         <div class="navbar-nav theme-brand flex-row  text-center">
             <div class="nav-logo">
                 <div class="nav-item theme-logo">
-                    <a href="./index.html">
+                    <a href="{{ route('admin.dashboard') }}">
                         <img src="{{ asset('admin/assets/img/logo.svg') }}" class="navbar-logo" alt="logo">
                     </a>
                 </div>
                 <div class="nav-item theme-text">
-                    <a href="./index.html" class="nav-link"> CORK </a>
+                    <a href="{{ route('admin.dashboard') }}" class="nav-link"> CORK </a>
                 </div>
             </div>
             <div class="nav-item sidebar-toggle">
@@ -39,11 +39,82 @@
                     </div>
                 </a>
             </li>
-
             <li class="menu menu-heading">
                 <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg><span>Blog</span></div>
+            </li>
+            @php
+                $blogCategoryCheck = ['blog.category.index', 'admin.blog.category.create', 'admin.blog.category.edit'];
+                $blogCheck = ['blog.index', 'blog.create', 'blog.edit'];
+            @endphp
+            <li
+                class="menu {{ in_array($routeName, $blogCategoryCheck) || in_array($routeName, $blogCheck) ? 'active' : '' }}">
+                <a href="#blogMenuParent" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <i data-feather="settings"></i>
+                        <span>Blog</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="feather feather-chevron-right">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled {{ in_array($routeName, $blogCategoryCheck) || in_array($routeName, $blogCheck) ? 'show' : '' }}"
+                    id="blogMenuParent" data-bs-parent="#accordionExample">
+                    <li>
+                        <a href="#blog-category-menu" data-bs-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle collapsed"> Blog Category <svg xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg> </a>
+                        <ul class="collapse list-unstyled sub-submenu {{ in_array($routeName, $blogCategoryCheck) ? 'show' : '' }}"
+                            id="blog-category-menu" data-bs-parent="#pages">
+                            <li class="{{ $routeName == 'blog.category.index' ? 'active' : '' }}">
+                                <a href="{{ route('blog.category.index') }}">
+                                    Danh mục blog </a>
+                            </li>
+                            <li
+                                class="{{ $routeName == 'admin.blog.category.create' || $routeName == 'admin.blog.category.edit' ? 'active' : '' }}">
+                                <a href="{{ route('admin.blog.category.create') }}">
+                                    Thêm mới </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#blog-menu" data-bs-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle collapsed"> Blog <svg xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg> </a>
+                        <ul class="collapse list-unstyled sub-submenu {{ in_array($routeName, $blogCheck) ? 'show' : '' }}"
+                            id="blog-menu" data-bs-parent="#pages">
+                            <li class="{{ $routeName == 'blog.index' ? 'active' : '' }}">
+                                <a href="{{ route('blog.index') }}">
+                                    Danh sách Blog </a>
+                            </li>
+                            <li
+                                class="{{ $routeName == 'blog.create' || $routeName == 'blog.edit' ? 'active' : '' }}">
+                                <a href="{{ route('blog.create') }}">
+                                    Thêm mới </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu menu-heading">
+                <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                     </svg><span>USER AND PAGES</span></div>
             </li>

@@ -1280,7 +1280,7 @@ body .navbar .dark-mode, body:not(.dark) .navbar .dark-mode {
   letter-spacing: 1px;
 }
 #sidebar ul.menu-categories ul.submenu > li ul.sub-submenu > li.active a {
-  color: #fff;
+  color: #4361ee;
 }
 #sidebar ul.menu-categories ul.submenu > li ul.sub-submenu > li a:hover {
   color: #4361ee;

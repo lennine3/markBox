@@ -12,7 +12,12 @@
 .logoBox {
     height: 32px;
 }
-
+.logoBox a{
+    padding: 0!important;
+}
+.logoBox a:hover{
+    background-color: transparent!important;
+}
 .logoBox img {
     height: 100%;
     width: 100%;

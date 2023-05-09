@@ -7,14 +7,19 @@ use Illuminate\Support\Facades\Validator;
 use Modules\Setting\Entities\Setting;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Cache;
+use App\Models\SlugOptimize;
+use Modules\Blog\Entities\Blog;
+use Modules\Blog\Entities\BlogCategory;
 
 class HomeController extends Controller
 {
     private $setting;
+    private $blog;
     public function __construct()
     {
         // $this->middleware('auth');
         $this->setting= new Setting();
+        $this->blog = new Blog();
     }
 
     /**
@@ -26,11 +31,30 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function handleURL($alias = '')
+    {
+        // dd($alias);
+        // $slug = explode('.', $alias);
 
+        // if (@$slug[1] != null) {
+        //     return view('errors.404');
+        // }
+        $getSlug = !empty($alias) ? SlugOptimize::slug(['slug' => $alias])->first() : new SlugOptimize();
+        // $params = [@$getSlug->slug];
+        $params = @$getSlug->slug;
+        if (@$getSlug->type == SlugOptimize::TYPE_BLOG_CATE) {
+            $response = $this->blogCategory($params);
+        } elseif (@$getSlug->type == SlugOptimize::TYPE_BLOG) {
+            $response = $this->blogDetail($params);
+        }
+        if (isset($response)) {
+            return $response;
+        }
+        return $this->get404();
+    }
     public function processContact()
     {
         $data = request()->except('_token');
-        // dd($data);
         $validator = Validator::make(request()->all(), [
             'phone' => 'numeric|digits_between:10,11|regex:/^0\d+$/',
         ], [
@@ -48,12 +72,6 @@ class HomeController extends Controller
                 $generals[$setting->type] = unserialize($setting->data);
             }
         }
-        // $social = [
-        //             'face' => $generals['SOCIAL']['facebook'],
-        //             'ytb' => $generals['SOCIAL']['youtube'],
-        //             'insta' => $generals['SOCIAL']['instagram'],
-        //             'linkedin' => $generals['SOCIAL']['linkedin'],
-        //         ];
         $newFeedback = Contact::create([
             'full_name' => $data['full_name'],
             'email' => $data['email'],
@@ -61,14 +79,13 @@ class HomeController extends Controller
             'service'=>$data['service'],
             'status' => 'N',
         ]);
-
-        // $shopName = $this->setting->getSetting('SHOP')['shop_name'];
-        // Mail::send(['html' => 'mail.feedback'], ['feedback' => $newFeedback], function ($message) use ($shopName, $newFeedback, $social) {
-        //     $message->from("donhang@ctrl.com.vn", $shopName);
-        //     $message->to($newFeedback->email);
-        //     $message->subject('Gửi feedback thành công');
-        // });
         return response()->json(['success' => 'Cảm ơn bạn đã gửi phản hồi đến chúng tôi.','message'=>'success']);
+    }
+    public function blogDetail($params)
+    {
+        $blogData=$this->blog->findBySlugOrId($params);
+        return view('web.blog.blogDetail',compact('blogData'));
+
     }
     public function clearCache()
     {

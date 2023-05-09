@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/src/notification/snackbar/snackbar.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('admin/plugins/css/dark/notification/snackbar/custom-snackbar.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('admin/plugins/css/light/notification/snackbar/custom-snackbar.css') }}" type="text/css">
-
+    <link rel="stylesheet" href="{{ asset('web/assets/css/toastr/toastr.css') }}">
     {{-- sweetalert --}}
     <link rel="stylesheet" href="{{ asset('admin/plugins/src/sweetalerts2/custom-sweetalert.js') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/css/dark/sweetalerts2/custom-sweetalert.css') }}">

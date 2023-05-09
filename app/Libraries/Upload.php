@@ -52,18 +52,6 @@ class Upload
         $webp_path = $path_parts['filename'] . '.webp';
 
         $this->convert_to_webp($directory.$file_name, $directory.$webp_path, $resize);
-        // dd('abc');
-        // $webp_name = webpFormat($file_name);
-        // $webpImage = Image::make($file->getRealPath());
-        // $insertLogo ? $webpImage->insert($logo, 'center') : '';
-        // $webpImage->encode('webp');
-
-        // if ($resize) {
-        //     $webpImage->resize($resize[0], $resize[1], function ($constraint) {
-        //         $constraint->aspectRatio();
-        //     });
-        // }
-        // $webpImage->save($directory.$webp_name);
 
         return $size ? [
             'name' => $file_name,
@@ -100,6 +88,55 @@ class Upload
         ] : $file_name;
     }
 
+    public function doUploadBlog($path, $file, $name = "", $resize = false, $size = false, $insertLogo=false)
+    {
+        $logoPath='public/admin/assets/img/logo/waterMark.png';
+        $logo = Image::make($logoPath);
+        $logo->resize(210, 110);
+
+        if ($name == "") {
+            $name = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $file_name = StripSlug($name) . '.' . $file->getClientOriginalExtension();
+            $postfix = "-" . substr(time(), -5);
+            if (file_exists(public_path('/storage') . '/' . $path . $file_name)) {
+                $file_name = StripSlug($name) . $postfix . '.' . $file->getClientOriginalExtension();
+                $name .= $postfix;
+            }
+        } else {
+            $file_name = $name;
+        }
+
+        $image = $file->getRealPath();
+
+        $image = Image::make($file->getRealPath());
+        $insertLogo ? $image->insert($logo, 'center') : '';
+        $height = $image->height();
+        $width = $image->width();
+        if ($resize) {
+            $image->resize($resize[0], $resize[1], function ($constraint) {
+                $constraint->aspectRatio();
+            });
+        }
+        $directory = 'public/storage' . '/' . $path;
+        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+        $image->save($directory . $file_name);
+
+        $path_parts = pathinfo($file_name);
+
+        $webp_path = $path_parts['filename'] . '.webp';
+        // dd($webp_path);
+        $this->convert_to_webp($directory.$file_name, $directory.$webp_path, $resize);
+
+        return $size ? [
+            'name' => $file_name,
+            'width' => $width,
+            'height' => $height
+        ] : [
+            'name'=> $file_name,
+            'webp_name'=>$webp_path,
+        ];
+    }
+
     public function doDirectory($path)
     {
         $destinationPath = storage_path('app/public');
@@ -124,5 +161,7 @@ class Upload
 
         // Save the WebP image to the specified path
         $image->save($webp_path);
+
+        $filename = basename($webp_path);
     }
 }

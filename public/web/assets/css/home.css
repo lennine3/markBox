@@ -429,7 +429,8 @@ select {
 
 /* faq start */
 .faqBackground {
-    background-color: #F6F6F6;
+    /* background-color: #F6F6F6; */
+    background-color: var(--main-color);
 }
 
 .faqContainer {
@@ -441,6 +442,7 @@ select {
     font-size: 36px;
     line-height: 47px;
     text-align: center;
+    color: #fff;
 }
 
 .faqCollapseContain {
@@ -454,10 +456,11 @@ select {
 
 .faqCollapseTitle {
     font-family: var(--font-family-semi-bold);
-    font-size: 20px;
+    font-size: 18px;
     line-height: 26px;
     cursor: pointer;
     margin: 0;
+    color: #fff;
 }
 
 div #accordion {
@@ -469,12 +472,15 @@ div #accordion {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 37px;
+    color: #fff;
 }
 
 .faqCollapseContain {
     margin-top: 30px;
 }
-
+.faqCollapseContain .fa-chevron-down{
+    color: #fff;
+}
 /* blog start */
 .blogContainer {
     padding-top: 100px;
@@ -597,7 +603,10 @@ div #accordion {
     background: #FF3767;
     text-align: center;
 }
-
+.pricingBox{
+    justify-content: center;
+    display: flex;
+}
 .PricingTable {
     background: #fff;
     overflow: hidden;
@@ -661,7 +670,7 @@ div #accordion {
 }
 
 .pricingTableFeatures {
-    padding: 24px 10px 0;
+    padding: 16px 10px 0;
     text-align: left;
     position: relative;
     width: 330px;
@@ -707,6 +716,7 @@ div #accordion {
     background-color: #FF3767;
     border-radius: 4px;
     transition: 0.7s all ease;
+    margin-top: 1.5rem;
 }
 
 .btnPricing:hover {
@@ -795,10 +805,10 @@ div #accordion {
         padding-top: 60px;
     }
 
-    .pricingMobileContain {
+    /* .pricingMobileContain {
         justify-content: center;
         display: flex;
-    }
+    } */
 
     /* Blog contain */
     .blogContainer {
@@ -907,7 +917,9 @@ div #accordion {
     .pricingTableFeatures {
         margin-bottom: 48px;
     }
-
+    .btnPricing{
+        margin-top: 0;
+    }
     /* Blog contain */
     .blogContainer {
         padding-top: 60px;
