@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-md-6 pricingBox">
+<div class="col-lg-4 col-md-6 pricingBox {{ $index == 3 || $index == 4 || $index == 5 ? 'hidden' : '' }} " id="pricingHid_{{ $index }}">
     <div class="pricingTable">
         <div class="pricingHeadingContainer">
             <div class="pricingTableHeading">

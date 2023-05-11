@@ -2,9 +2,9 @@ const container = document.querySelector('.pricingContainer');
 const showMoreBtn = document.getElementById('show-more');
 
 showMoreBtn.addEventListener('click', function () {
-    $('#pricingHid_1').toggleClass('hidden');
-    $('#pricingHid_2').toggleClass('hidden');
     $('#pricingHid_3').toggleClass('hidden');
+    $('#pricingHid_4').toggleClass('hidden');
+    $('#pricingHid_5').toggleClass('hidden');
     $('#show-more').toggleClass('open');
     if ($('#show-more').hasClass('open')) {
         $('#show-more').text('Thu gọn bảng giá')

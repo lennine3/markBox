@@ -206,7 +206,7 @@
             <div class="pricingContain">
                 <div class="pricingContainer">
                     <div class="row">
-                        @foreach ($pricingTable as $item)
+                        @foreach ($pricingTable as $index => $item)
                             @include('web.home.pricing-table')
                         @endforeach
 
