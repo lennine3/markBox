@@ -1,4 +1,5 @@
 <?php
+
 use Modules\Setting\Entities\Setting;
 use Illuminate\Support\Facades\URL;
 
@@ -59,5 +60,17 @@ if (!function_exists('show_favicon')) {
             return asset($image_path);
         }
         return asset('favicon.ico');
+    }
+}
+
+if (!function_exists('checkPricingTable')) {
+    function checkPricingTable($value)
+    {
+        if (is_numeric($value)) {
+            $formattedValue = number_format($value, 0, '.', ',');
+            return $formattedValue.' đ';
+        } else {
+            return $value;
+        }
     }
 }

@@ -121,7 +121,9 @@
                                     <label for="blog_category_id" class="form-label">Danh mục</label>
                                     <select name="blog_category_id" id="blog_category_id">
                                         @foreach ($blogCategoryList as $item)
-                                            <option value="{{ $item->id }}">{{ $item->title_short }}</option>
+                                            <option value="{{ $item->id }}"
+                                                {{ @$blog && @$item->id == $blog->blog_category_id ? 'selected' : '' }}>
+                                                {{ $item->title_short }}</option>
                                         @endforeach
                                     </select>
                                 </div>

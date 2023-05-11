@@ -1,17 +1,17 @@
 /* default */
 @font-face {
     font-family: 'Inter Regular';
-    src: url('../../../../web/fonts/Inter/Inter-Regular.ttf');
+    src: url('../../../../web/assets/fonts/Inter/Inter-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Inter Bold';
-    src: url('../../../../web/fonts/Inter/Inter-Bold.ttf');
+    src: url('../../../../web/assets/fonts/Inter/Inter-Bold.ttf');
 }
 
 @font-face {
     font-family: 'Inter SemiBold';
-    src: url('../../../../web/fonts/Inter/Inter-SemiBold.ttf');
+    src: url('../../../../web/assets/fonts/Inter/Inter-SemiBold.ttf');
 }
 
 .titleText {
@@ -19,10 +19,12 @@
     font-size: 36px;
     line-height: 47px;
 }
+
 .descText {
     font-size: 16px;
     line-height: 24px;
 }
+
 /* Banner */
 .videoContain {
     width: 100%;
@@ -375,4 +377,98 @@
 .saveSeoServiceImg {
     color: #3F4254;
     cursor: pointer;
+}
+
+/* pricingTable */
+.pricingTable{
+    background-color: #ffff;
+    box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+}
+.pricingBox {
+    justify-content: center;
+    display: flex;
+}
+
+.pricingHeadingContainer {
+    padding: 34px 0 21px;
+    background: #FFF3F6;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.pricingTableHeading {
+    text-align: center;
+}
+
+.pricingTableTitle {
+    font-size: 20px;
+    font-family: var(--font-family-semi-bold);
+    line-height: 26px;
+}
+
+.pricingTablePrice {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.pricingTablePriceValueTitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.pricingTablePriceValue {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.pricingSaleContain {
+    height: 32px;
+    background: #FF3767;
+    text-align: center;
+}
+
+.pricingSaleText {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+    padding: 8px 0;
+}
+
+.pricingTableFeatures {
+    padding: 16px 10px 5px;
+    text-align: left;
+    position: relative;
+    transition: .3s all;
+}
+
+.pricingList {
+    padding: 0;
+    list-style-image: url(../../../../web/assets/image/logo/check.svg);
+    list-style-position: inside;
+    margin: 16px auto;
+}
+
+.pricingHr {
+    border-top: 1px dotted;
+}
+
+.pricingTitle {
+    font-size: 16px;
+    font-family: 'Inter SemiBold';
+}
+
+.shader-carousel-module--arrows--mqZjy {
+    bottom: -3em;
+    position: absolute;
+    right: 0;
+}
+
+.pricingList li {
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
 }

@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Response;
 Route::prefix('admin')->middleware(['auth','RegisterAdminMenuServiceProvider'])->group(function () {
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
     Route::get('/home','AdminController@homePage')->name('admin.home-setting');
+    Route::get('/home-pricing-{pricingTableData}','AdminController@pricingEdit')->name('admin.edit.pricing-table');
+    Route::post('/process-pricing-table','AdminController@processPricingTable')->name('admin.process.pricing-table');
     Route::post('/process-faq','AdminController@processFaqQuestion')->name('admin.process.faq');
 });
 

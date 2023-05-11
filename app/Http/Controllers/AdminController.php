@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Faq;
+use App\Models\PricingTable;
+use Illuminate\Support\Arr;
 
 class AdminController extends Controller
 {
-    //
+    private $pricingTable;
+    public function __construct()
+    {
+        $this->pricingTable= new PricingTable();
+    }
     public function dashboard()
     {
         return view('dashboard');
@@ -15,7 +21,14 @@ class AdminController extends Controller
     public function homePage()
     {
         $faq=Faq::all();
-        return view('admin.home.index', compact('faq'));
+        $pricingTable=PricingTable::all();
+        return view('admin.home.index', compact('faq', 'pricingTable'));
+    }
+    public function pricingEdit(PricingTable $pricingTableData)
+    {
+        $faq=Faq::all();
+        $pricingTable=PricingTable::all();
+        return view('admin.home.index', compact('faq', 'pricingTable', 'pricingTableData'));
     }
     public function processFaqQuestion(Request $request)
     {
@@ -29,5 +42,28 @@ class AdminController extends Controller
         $faq=Faq::get();
         $html = view('admin.home.faqList', compact('faq'))->render();
         return response()->json(['message' => 'Dữ liệu đã thay đổi','html'=>$html]);
+    }
+
+    public function processPricingTable()
+    {
+        $inputs = request()->except(['_token']);
+        $data=Arr::only($inputs, ['title','price', 'note', 'saleNote', 'otherNote','otherNote_1']);
+        $filteredPricingFunc = array_values(array_filter(request('pricing_func'), function ($value) {
+            return $value !== null;
+        }));
+        $jsonPricingFuncData = json_encode(["pricing_func" => $filteredPricingFunc], JSON_UNESCAPED_UNICODE);
+        $jsonPricingFuncData = str_replace('\/', '/', $jsonPricingFuncData);
+
+        $data['pricing_func']=$jsonPricingFuncData;
+        $pricingTable = $inputs['pricing_id'] ? PricingTable::findOrFail($inputs['pricing_id']) : PricingTable::create($data);
+        if ($inputs['pricing_id']) {
+            $pricingTable->update($data);
+        }
+        $pricingTable=PricingTable::all();
+        // $html = view('admin.home.prcing-list', compact('pricingTable'))->render();
+        return response()->json([
+            'message' => 'Đã thêm dữ liệu thành công',
+            'redirect' => route('admin.home-setting'), // Replace "desired.route.name" with the name of your desired route
+        ]);
     }
 }

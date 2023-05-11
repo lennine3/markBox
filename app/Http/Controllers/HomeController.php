@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Cache;
 use App\Models\SlugOptimize;
 use Modules\Blog\Entities\Blog;
 use Modules\Blog\Entities\BlogCategory;
+use App\Models\PricingTable;
+use App\Models\Faq;
 
 class HomeController extends Controller
 {
@@ -29,7 +31,12 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('home');
+        $pricingTable=PricingTable::all();
+        $faq=Faq::all();
+        $marketingService=Blog::where('blog_Category_id', 2)->status('A')->get();
+        $marketingBlog=Blog::where('blog_Category_id', 1)->status('A')->get();
+        // dd($marketingBlog);
+        return view('home', compact('pricingTable', 'faq', 'marketingBlog', 'marketingService'));
     }
     public function handleURL($alias = '')
     {
@@ -84,8 +91,7 @@ class HomeController extends Controller
     public function blogDetail($params)
     {
         $blogData=$this->blog->findBySlugOrId($params);
-        return view('web.blog.blogDetail',compact('blogData'));
-
+        return view('web.blog.blogDetail', compact('blogData'));
     }
     public function clearCache()
     {

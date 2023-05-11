@@ -167,30 +167,26 @@
                     <hr class="homeMarketingSeparateLine">
                 </div>
             </div>
-            @php
-                $homeMarketingData = [
-                    'name' => 'Dịch vụ marketing demo',
-                    'desc' => 'Đây là mô tả ngắn của dịch vụ marketing demo',
-                ];
-            @endphp
             <div class="row">
-                @for ($i = 0; $i < 6; $i++)
+                @foreach ($marketingService as $item)
                     <div class="col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center homeMarketingBoxContain">
                         <div class="homeMarketingBox">
-                            <div class="homeMarketingBoxImg"> <img src="{{ asset('web/assets/image/home/seoImage.png') }}"
-                                    alt="Website bán hàng (E-commerce)" loading="lazy"> </div>
+                            <div class="homeMarketingBoxImg">
+                                <img src="{{ @$item->image ? asset(config('blog.image.path') . $item->id . '/' . $item->image) : asset('admin/assets/img/no-image.jpeg') }}"
+                                    alt="{{ $item->title }}" loading="lazy">
+                            </div>
                             <div>
-                                <h3 class="homeMarketingBoxTitle"> {{ $homeMarketingData['name'] }} </h3>
-                                <div class="homeMarketingBoxDesc"> {{ $homeMarketingData['desc'] }} </div>
+                                <h3 class="homeMarketingBoxTitle"> {{ $item->title }} </h3>
+                                <div class="homeMarketingBoxDesc"> {!! $item->description !!} </div>
                                 <div class="homeMarketingBoxLink">
-                                    <a target="_blank" href="javascript:0" class="homeMarketLink">
+                                    <a target="_blank" href="{{ url($item->slug) }}" class="homeMarketLink">
                                         Bấm vào để xem chi tiết <i class="far fa-chevron-double-right"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </section>
@@ -210,43 +206,11 @@
             <div class="pricingContain">
                 <div class="pricingContainer">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 pricingBox">
-                            <div class="pricingTable">
-                                <div class="pricingHeadingContainer">
-                                    <div class="pricingTableHeading">
-                                        <h3 class="pricingTableTitle"> Marketing khởi nghiệp </h3>
-                                    </div>
-                                    <div class="pricingTablePrice"> <span class="pricingTablePriceValueTitle"> Gói:
-                                        </span> <span class="pricingTablePriceValue"> 8,000,000 đ </span> </div>
-                                    <div class="text-center" style="font-size:14px"> (Không phát sinh chi phí) </div>
-                                </div>
-                                <div class="pricingSaleContain">
-                                    <div class="pricingSaleText"> Tư vấn chiến lược marketing miễn phí 2h </div>
-                                </div>
-                                <div class="pricingTableFeatures" id="pricingTableFeatures_0">
-                                    <div>
-                                        <ul class="pricingList">
-                                            <li>Social media: Facebook, instagram</li>
-                                            <li>Tặng: Google maps, Linkedin</li>
-                                        </ul>
-                                        <hr class="pricingHr">
-                                        <div class="pricingTitle"> Mô tả gói: </div>
-                                        <ul class="pricingList">
-                                            <li>Block giới thiệu sản phẩm bán chạy/ hàng mới về</li>
-                                            <li>Slider banner</li>
-                                            <li>Hộp tìm kiếm thông tin sản phẩm</li>
-                                            <li>Gallery hình ảnh, Video</li>
-                                            <li>ChatBox</li>
-                                            <li>Nút gọi( bản mobile)</li>
-                                            <li>Zalo</li>
-                                            <li>Đăng ký nhận tin</li>
-                                            <li>kết nối mạng xã hội</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 pricingBox">
+                        @foreach ($pricingTable as $item)
+                            @include('web.home.pricing-table')
+                        @endforeach
+
+                        {{-- <div class="col-lg-4 col-md-6 pricingBox">
                             <div class="pricingTable">
                                 <div class="pricingHeadingContainer">
                                     <div class="pricingTableHeading">
@@ -421,7 +385,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -435,24 +399,20 @@
     <section class="container blogContainer blogContain" id="blogMarketing">
         <h2 class="titleText blogHeadTitle">Blog marketing </h2>
         <div class="descText"> Chia sẻ kinh nghiệm chọn mua xe ô tô và hướng dẫn cách chăm sóc xế yêu của bạn </div>
-
-        @php
-            $blogData = [
-                'name' => 'Lorem Ipsum is simply dummy text of the printing and typesetting',
-                'desc' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry text of the printing and typesetting industry',
-            ];
-        @endphp
         <div class="blogContainBox">
             <div class="blog-slider">
-                @for ($y = 0; $y < 6; $y++)
-                    <div class=" blogContainMobile">
-                        <div class="blogBox">
-                            <img src="{{ asset('web/assets/image/home/blog.png') }}" alt="car 1 image" loading="lazy">
-                        </div>
-                        <div class="blogTitle"> {{ $blogData['name'] }} </div>
-                        <div class="blogSubTitle">{{ $blogData['desc'] }}</div>
+                @foreach ($marketingBlog as $item)
+                    <div class="blogContainMobile">
+                        <a href="{{ url($item->slug) }}">
+                            <div class="blogBox">
+                                <img src="{{ @$item->image ? asset(config('blog.image.path') . $item->id . '/' . $item->image) : asset('admin/assets/img/no-image.jpeg') }}"
+                                    alt="{{ $item->title }}" loading="lazy">
+                            </div>
+                            <div class="blogTitle"> {{ $item->title }} </div>
+                            <div class="blogSubTitle">{!! $item->description !!}</div>
+                        </a>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </section>
@@ -519,34 +479,23 @@
         <div class="container faqContainer">
             <div class="homeFormBox">
                 <h2 class="faqTitle"> Câu hỏi thường gặp (FAQ) </h2>
-                @php
-                    $faqData = [
-                        'question' => 'What are your areas of focus as a UI/UX and web design agency?',
-                        'answer' => 'User experience is more than a capability for us. It’s at the core of everything we do here at
-            Clay. We started in San Francisco as a UI/UX design agency and website design company focused on mobile apps
-            but quickly expanded our offering to web applications, enterprise software, and emerging technologies such
-            as AR/VR and wearable. The UX UI and web design projects we take on range from building a new product to
-            redesigning an existing mobile app, website, or enterprise software. We do everything you might need to
-            bring a successful digital product to life: user research, product strategy, user interface, and user
-            experience design, usability testing, prototyping, web design and development.',
-                    ];
-                @endphp
                 <div class="faqCollapseContain">
                     <div id="accordion">
-                        @for ($u = 0; $u < 5; $u++)
-                            <div data-bs-toggle="collapse" data-bs-target="#myCollapse{{ $u }}"
-                                class="collapsed faqCollapseBox" data-id="{{ $u }}"
-                                aria-expanded="{{ $u != 0 ? 'false' : 'true' }}">
+                        @foreach ($faq as $index => $item)
+                            <div data-bs-toggle="collapse" data-bs-target="#myCollapse{{ $item->id }}"
+                                class="collapsed faqCollapseBox" data-id="{{ $item->id }}"
+                                aria-expanded="{{ $index != 0 ? 'false' : 'true' }}">
                                 <div class="d-flex justify-content-between faqCollapseContain">
-                                    <h3 class="faqCollapseTitle">{{ $faqData['question'] }}</h3>
+                                    <h3 class="faqCollapseTitle">{{ $item->title }}</h3>
                                     <i class="fa-sharp fa-solid fa-chevron-down fa-lg"></i>
                                 </div>
                             </div>
-                            <div id="myCollapse{{ $u }}"
-                                class="collapse faqCollapseBody {{ $u != 0 ? '' : 'show' }}" data-bs-parent="#accordion">
-                                {{ $faqData['answer'] }}
+                            <div id="myCollapse{{ $item->id }}"
+                                class="collapse faqCollapseBody {{ $index != 0 ? '' : 'show' }}"
+                                data-bs-parent="#accordion">
+                                {{ $item->content }}
                             </div>
-                        @endfor
+                        @endforeach
                     </div>
                 </div>
             </div>

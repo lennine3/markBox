@@ -13,7 +13,7 @@
                             name="title">
                     </div>
                     <div class="mt-5">
-                        <label for="benefitTtile">Mô tả</label>
+                        <label for="benefitDescription">Mô tả</label>
                         <input type="text" id="benefitDescription" value=""
                             class="form-control designServiceInput" name="content">
                     </div>
