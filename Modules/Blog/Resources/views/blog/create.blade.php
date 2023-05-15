@@ -144,11 +144,11 @@
                                 <div class="col-lg-12 mb-3">
                                     <label for="seoDescription" class="form-label">Seo Description</label>
                                     <textarea type="text" cols="30" rows="5" class="form-control" id="seoDescription"
-                                        name="seo_description">{{ @$blog->seo->seo_keyword }}</textarea>
+                                        name="seo_description">{{ @$blog->seo->seo_description }}</textarea>
                                 </div>
                                 <div class="col-lg-12">
                                     <label for="seoKeyword" class="form-label">Seo Keyword</label>
-                                    <textarea type="text" cols="30" rows="5" class="form-control" id="seoKeyword" name="seo_keyword">{{ @$blog->seo->seo_description }}</textarea>
+                                    <textarea type="text" cols="30" rows="5" class="form-control" id="seoKeyword" name="seo_keyword">{{ @$blog->seo->seo_keyword }}</textarea>
                                 </div>
                             </div>
                         </div>

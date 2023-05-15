@@ -1,6 +1,6 @@
 @extends('layouts.web.app')
 @section('title')
-    {{ @$blogData->title }}
+    {{ @$blogData->seo->seo_title ? @$blogData->seo->seo_title : @$blogData->title }}
 @endsection
 
 @section('style')
