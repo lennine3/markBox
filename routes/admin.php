@@ -16,5 +16,9 @@ Route::prefix('admin')->middleware(['auth','RegisterAdminMenuServiceProvider'])-
     Route::get('/home-pricing-{pricingTableData}','AdminController@pricingEdit')->name('admin.edit.pricing-table');
     Route::post('/process-pricing-table','AdminController@processPricingTable')->name('admin.process.pricing-table');
     Route::post('/process-faq','AdminController@processFaqQuestion')->name('admin.process.faq');
+
+    // Home landing page
+    Route::post('/home-section-info','AjaxAdminController@processSectionInfo')->name('admin.process.section-info');
+    Route::post('/home-web-design','AjaxAdminController@processWebDesign')->name('admin.process.web-design');
 });
 

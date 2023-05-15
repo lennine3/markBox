@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Faq;
 use App\Models\PricingTable;
 use Illuminate\Support\Arr;
+use App\Models\SectionInfo;
+use App\Models\DesignService;
 
 class AdminController extends Controller
 {
@@ -22,7 +24,10 @@ class AdminController extends Controller
     {
         $faq=Faq::all();
         $pricingTable=PricingTable::all();
-        return view('admin.home.index', compact('faq', 'pricingTable'));
+        $webDesignInfo=SectionInfo::findOrFail(1);
+        $aboutInfo=SectionInfo::findOrFail(7);
+        $designService=DesignService::all();
+        return view('admin.home.index', compact('faq', 'pricingTable','webDesignInfo','designService','aboutInfo'));
     }
     public function pricingEdit(PricingTable $pricingTableData)
     {

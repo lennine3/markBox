@@ -12,6 +12,8 @@ use Modules\Blog\Entities\Blog;
 use Modules\Blog\Entities\BlogCategory;
 use App\Models\PricingTable;
 use App\Models\Faq;
+use App\Models\SectionInfo;
+use App\Models\DesignService;
 
 class HomeController extends Controller
 {
@@ -31,12 +33,17 @@ class HomeController extends Controller
      */
     public function home()
     {
+        $webDesignInfo=SectionInfo::findOrFail(1);
+        $designService=DesignService::all();
+
+        $aboutInfo=SectionInfo::findOrFail(7);
+
         $pricingTable=PricingTable::all();
         $faq=Faq::all();
         $marketingService=Blog::where('blog_Category_id', 2)->status('A')->get();
         $marketingBlog=Blog::where('blog_Category_id', 1)->status('A')->get();
         // dd($marketingBlog);
-        return view('home', compact('pricingTable', 'faq', 'marketingBlog', 'marketingService'));
+        return view('home', compact('pricingTable', 'faq', 'marketingBlog', 'marketingService','webDesignInfo','designService','aboutInfo'));
     }
     public function handleURL($alias = '')
     {
