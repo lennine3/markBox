@@ -11,6 +11,7 @@ use Illuminate\Support\Arr;
 use App\Libraries\Upload;
 use App\Models\Seo;
 use App\Models\SlugOptimize;
+use Illuminate\Support\Facades\Auth;
 
 use function App\Libraries\StripSlug;
 
@@ -81,6 +82,7 @@ class BlogController extends Controller
         $data=Arr::only($inputs, ['title', 'description', 'content', 'priority', 'status','blog_category_id']);
         $seoData=Arr::only($inputs, ['seo_title','seo_description','seo_keyword']);
         $data['slug']=$slug;
+        $data['user_id']=Auth::user()->id;
         $blog= $inputs['blog_id'] ? Blog::findOrFail($inputs['blog_id']) : Blog::create($data);
         $seo = Seo::updateOrCreate(['object_id' => $inputs['blog_id'], 'type' => Seo::BLOG], $seoData);
         if (request()->hasFile('blogImage')) {
