@@ -22,7 +22,7 @@
             <h1 class="titleText">{{ $aboutInfo->name }}</h1>
             <div class="aboutUsBox">
                 <div class="descText">
-                    {{$aboutInfo->description}}
+                    {{ $aboutInfo->description }}
                 </div>
             </div>
         </div>
@@ -39,12 +39,10 @@
             <div class=" text-center">
                 <div class="d-flex justify-content-center">
                     <h2 class="titleText homeMarketingTitle"> Dịch vụ marketing
-                        đáp ứng đa dạng nhu cầu của bạn </h2>
+                        dành cho doanh nghiệp vừa và nhỏ </h2>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <span class="descText homeMarketingDesc"> Lựa chọn thể loại website mà
-                        bạn mong muốn, chúng tôi sẽ giúp bạn xây dựng một kênh bán hàng và kênh truyền thông doanh nghiệp
-                        đạt hiệu quả cao nhất.
+                    <span class="descText homeMarketingDesc"> Lựa chọn dịch vụ marketing mà bạn muốn chúng tôi tư vấn!
                     </span>
                 </div>
                 <div class="d-flex justify-content-center">
@@ -105,7 +103,7 @@
     </section>
     <section class="container blogContainer blogContain" id="blogMarketing">
         <h2 class="titleText blogHeadTitle">Blog marketing </h2>
-        <div class="descText"> Chia sẻ kinh nghiệm chọn mua xe ô tô và hướng dẫn cách chăm sóc xế yêu của bạn </div>
+        <div class="descText"> Chia sẻ kiến thức về marketing giúp bạn quản trị thương hiệu tốt hơn </div>
         <div class="blogContainBox">
             <div class="blog-slider">
                 @foreach ($marketingBlog as $item)
