@@ -4,7 +4,7 @@
             <div class="logoContain">
                 <div class="logoBox">
                     <a href="{{ route('home') }}">
-                        <img src="{{ asset('web/assets/image/logo/headerLogo.png') }}" alt="">
+                        <img src="{{ asset('web/assets/image/logo/headerLogo.svg') }}" alt="">
                     </a>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                     <a href="/#pricingTableSetion">Bảng giá dịch vụ</a>
                 </li>
                 <li><a href="/#blogMarketing">Blog marketing</a></li>
-                <li><a href="/#formContactSection">Liên hệ</a></li>
+                {{-- <li><a href="/#formContactSection">Liên hệ</a></li> --}}
             </ul>
             <div class="btnContain">
                 <a href="tel:{{ $generals['SHOP']['phone'] }}" class="btn headerContactBtn">Gọi nhanh:

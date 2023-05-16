@@ -55,7 +55,7 @@ class SettingController extends Controller
         Cache::flush();
         return response()->json([
             'success' => true,
-            'toastr' => trans('Setting::setting.toastr_success'),
+            'message' => 'Dữ liệu đã được cập nhật',
         ]);
     }
 }

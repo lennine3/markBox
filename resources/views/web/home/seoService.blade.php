@@ -3,15 +3,16 @@
         <div class="col-lg-4 seoServiceLeftBg px-0 d-flex col-sm-12">
             <div class="d-flex align-items-center">
                 <div class="seoServiceLeftBox">
-                    <h2 class="seoServiceLeftTitle"> Chuyển đổi traffic thành doanh thu </h2>
-                    <div class="seoServiceLeftDesc"> Một website thấu hiểu người dùng và đáp ứng được nhu cầu của người
-                        dùng, sẽ trở thành một kênh bán hàng trực tuyến tạo ra hiệu quả doanh số bền vững. </div>
+                    <h2 class="seoServiceLeftTitle"> "Bật" thương hiệu online! </h2>
+                    <div class="seoServiceLeftDesc"> Bạn đang sở hữu một thương hiệu và sản phẩm rất tuyệt vời. Hãy để nó
+                        được tiếp cận nhiều khách hàng hơn nhé! </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-8 px-0 col-sm-12">
-            <div class="d-flex justify-content-center seoServiceRightContain">
-                <div class="row">
+            <div class="d-flex justify-content-center">
+                <img src="{{ asset('web/assets/image/home/seoService/seoService.png') }}" alt="" class="w-100 h-100">
+                {{-- <div class="row">
                     <div class="col-lg-6 col-6">
                         <div class="d-flex justify-content-end">
                             <div class="bigFrame">
@@ -36,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

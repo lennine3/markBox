@@ -1,6 +1,6 @@
 <nav class="headerMobile" id="headerMobile">
     <div class="logoHeaderMobile">
-        <a href="#"> <img src="{{ asset('web/assets/image/logo/headerLogo.png') }}" alt=""></a>
+        <a href="#"> <img src="{{ asset('web/assets/image/logo/headerLogo.svg') }}" alt=""></a>
     </div>
     <div>
 
@@ -16,7 +16,7 @@
             <li><a href="/#homeMarketingSection">Dịch vụ Marketing</a></li>
             <li><a href="/#pricingTableSetion">Bảng giá dịch vụ</a></li>
             <li><a href="/#blogMarketing">Blog Marketing</a></li>
-            <li><a href="/#formContactSection">Liên hệ</a></li>
+            {{-- <li><a href="/#formContactSection">Liên hệ</a></li> --}}
             <li><a href="tel:{{ $generals['SHOP']['phone'] }}" class="btn headerContactBtn">Gọi nhanh:
                     {{ $generals['SHOP']['phone'] }}</a></li>
         </ul>
