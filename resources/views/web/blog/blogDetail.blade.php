@@ -82,7 +82,7 @@
                 <div class="maybeCareTitle text-center titleText">Tham khảo thêm</div>
                 <div class="row">
                     @foreach ($relatedBlog as $item)
-                        <div class="col-lg-4 col-md-4 col-sm-12 relatedBox">
+                        <div class="col-lg-3 col-md-3 col-sm-12 relatedBox">
                             <a href="{{ url($item->slug) }}">
                                 <div class="post-thumb">
                                     <img src="{{ @$item->image ? asset(config('blog.image.path') . $item->id . '/' . $item->image) : asset('admin/assets/img/no-image.jpeg') }}"
