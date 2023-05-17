@@ -83,7 +83,7 @@
                 <div class="row">
                     @foreach ($relatedBlog as $item)
                         <div class="col-lg-4 col-md-4 col-sm-12 relatedBox">
-                            <a href="#">
+                            <a href="{{ url($item->slug) }}">
                                 <div class="post-thumb">
                                     <img src="{{ @$item->image ? asset(config('blog.image.path') . $item->id . '/' . $item->image) : asset('admin/assets/img/no-image.jpeg') }}"
                                         alt="">
