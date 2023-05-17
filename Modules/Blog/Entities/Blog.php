@@ -201,11 +201,11 @@ class Blog extends Model
         return !empty($params['limit']) ? $blogs->paginate($params['limit']) : $blogs->get();
     }
 
-    public function get_blogs_care($limit, $except_cate_ids, $except_ids)
+    public function get_blogs_related($limit, $cate_id, $except_ids)
     {
         $blogs = $this->where('status', 'A')
-            ->whereNotIn('id', $except_ids)
-            ->whereNotIn('blog_category_id', $except_cate_ids)
+            ->where('id','!=', $except_ids)
+            ->where('blog_category_id', $cate_id)
             ->inRandomOrder()->limit($limit)->get();
         return $blogs;
     }

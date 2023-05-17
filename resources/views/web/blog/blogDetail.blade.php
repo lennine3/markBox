@@ -76,55 +76,31 @@
 
         </div>
     </section>
-    <section class="relatedSection">
-        <div class="container">
-            <div class="maybeCareTitle text-center titleText">Tham khảo thêm</div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 relatedBox">
-                    <a href="#">
-                        <div class="post-thumb">
-                            <img src="{{ asset('web/assets/image/home/blog.png') }}" alt="">
+    @if (count($relatedBlog) > 1)
+        <section class="relatedSection">
+            <div class="container">
+                <div class="maybeCareTitle text-center titleText">Tham khảo thêm</div>
+                <div class="row">
+                    @foreach ($relatedBlog as $item)
+                        <div class="col-lg-4 col-md-4 col-sm-12 relatedBox">
+                            <a href="#">
+                                <div class="post-thumb">
+                                    <img src="{{ @$item->image ? asset(config('blog.image.path') . $item->id . '/' . $item->image) : asset('admin/assets/img/no-image.jpeg') }}"
+                                        alt="">
+                                </div>
+                                <div>
+                                    <h3 class="relatedPostTitle">{{ $item->title }}</h3>
+                                    <div class="relatedPostDesc">
+                                        {!! $item->description !!}
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <div>
-                            <h3 class="relatedPostTitle">Xuất Hiện Làn Sóng Gom Đất Nền Ven Biển Khi Giá Giảm Mạnh</h3>
-                            <div class="relatedPostDesc"> Thực trạng khó khăn của thị trường bất động sản năm 2022 đã khiến
-                                thị trường nghỉ dưỡng càng thêm thách thức. Đất nền ven biển có xu hướng giảm giá mạnh. Điểm
-                                sáng duy nhất là sức mua tăng, đến từ xu hướng bắt đáy, săn hàng cắt lỗ của những nhà đầu tư
-                                trường vốn. </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 relatedBox">
-                    <a href="#">
-                        <div class="post-thumb">
-                            <img src="{{ asset('web/assets/image/home/blog.png') }}" alt="">
-                        </div>
-                        <div>
-                            <h3 class="relatedPostTitle">Xuất Hiện Làn Sóng Gom Đất Nền Ven Biển Khi Giá Giảm Mạnh</h3>
-                            <div class="relatedPostDesc"> Thực trạng khó khăn của thị trường bất động sản năm 2022 đã khiến
-                                thị trường nghỉ dưỡng càng thêm thách thức. Đất nền ven biển có xu hướng giảm giá mạnh. Điểm
-                                sáng duy nhất là sức mua tăng, đến từ xu hướng bắt đáy, săn hàng cắt lỗ của những nhà đầu tư
-                                trường vốn. </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 relatedBox">
-                    <a href="#">
-                        <div class="post-thumb">
-                            <img src="{{ asset('web/assets/image/home/blog.png') }}" alt="">
-                        </div>
-                        <div>
-                            <h3 class="relatedPostTitle">Xuất Hiện Làn Sóng Gom Đất Nền Ven Biển Khi Giá Giảm Mạnh</h3>
-                            <div class="relatedPostDesc"> Thực trạng khó khăn của thị trường bất động sản năm 2022 đã khiến
-                                thị trường nghỉ dưỡng càng thêm thách thức. Đất nền ven biển có xu hướng giảm giá mạnh. Điểm
-                                sáng duy nhất là sức mua tăng, đến từ xu hướng bắt đáy, săn hàng cắt lỗ của những nhà đầu tư
-                                trường vốn. </div>
-                        </div>
-                    </a>
+                    @endforeach
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 @endsection
 @section('script')
     <script src="{{ asset('web/assets/js/toc/jquery.toc.js') }}"></script>

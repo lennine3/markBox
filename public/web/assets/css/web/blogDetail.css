@@ -140,6 +140,7 @@ img {
     position: relative;
     overflow: hidden;
     /* height: 233px; */
+    aspect-ratio: 3/2;
 }
 
 .post-thumb img {
@@ -169,6 +170,38 @@ img {
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     color: #000000;
+}
+
+/* table */
+table {
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
+    text-align: center;
+    outline: solid 1px #ccc;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    margin: 10px 20px;
+    display: inline-block;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td,
+th {
+    border: #d3d3d3 1px dotted;
 }
 
 @media only screen and (max-width: 1023px) {
