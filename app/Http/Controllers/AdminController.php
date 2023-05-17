@@ -33,7 +33,10 @@ class AdminController extends Controller
     {
         $faq=Faq::all();
         $pricingTable=PricingTable::all();
-        return view('admin.home.index', compact('faq', 'pricingTable', 'pricingTableData'));
+        $webDesignInfo=SectionInfo::findOrFail(1);
+        $aboutInfo=SectionInfo::findOrFail(7);
+        $designService=DesignService::all();
+        return view('admin.home.index', compact('faq', 'pricingTable', 'pricingTableData','webDesignInfo','aboutInfo','designService'));
     }
     public function processFaqQuestion(Request $request)
     {
