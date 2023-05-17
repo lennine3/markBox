@@ -98,7 +98,7 @@ class HomeController extends Controller
     public function blogDetail($params)
     {
         $blogData=$this->blog->findBySlugOrId($params);
-        $relatedBlog=$this->blog->get_blogs_related(3,$blogData->blog_category_id,$blogData->id);
+        $relatedBlog=$this->blog->get_blogs_related(4,$blogData->blog_category_id,$blogData->id);
         return view('web.blog.blogDetail', compact('blogData','relatedBlog'));
     }
     public function clearCache()
