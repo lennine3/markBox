@@ -76,7 +76,7 @@
 
         </div>
     </section>
-    @if (count($relatedBlog) > 1)
+    @if (count($relatedBlog) > 0)
         <section class="relatedSection">
             <div class="container">
                 <div class="maybeCareTitle text-center titleText">Tham khảo thêm</div>
