@@ -3,6 +3,3 @@
 <script src="{{ asset('web/assets/js/slick/slick.min.js') }}"></script>
 <script src="{{ asset('admin/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('web/assets/js/main.js') }}"></script>
-<script>
-    
-</script>

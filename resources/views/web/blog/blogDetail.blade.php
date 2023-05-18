@@ -31,7 +31,6 @@
                 </div>
 
                 <div id="post-content">
-
                     <div class="bg-light py-3 px-3 tableOfContent" id="toc-content" data-bs-toggle="collapse"
                         data-bs-target="#tocAccordion">
                         <div class="mb-0 d-flex justify-content-between align-items-center">
@@ -41,7 +40,6 @@
                             <button class="toc-accordion-btn">
                                 <span id="tocText">Thu gọn</span><i class="fa fa-angle-up"></i>
                             </button>
-
                         </div>
                         <div class="collapse show" id="tocAccordion">
                             <ul data-toc="#post-content" data-toc-headings="h1,h2,h3" id="toc-blog" class="ml-3">
@@ -104,7 +102,22 @@
 @endsection
 @section('script')
     <script src="{{ asset('web/assets/js/toc/jquery.toc.js') }}"></script>
-    <script type="text/javascript">
-        $("#toc-blog").toc();
+    {{-- <script type="text/javascript">
+        $(document).ready(function() {
+            $("#toc-blog").toc();
+        });
+    </script> --}}
+    <script>
+        $("#toc-blog").on("load", function() {
+            const count_toc_blog = $("#toc-blog li").length;
+            if (count_toc_blog <= 0) {
+                $("#toc-content").remove();
+            } else {
+                const urlPath = window.location.pathname;
+                const str = $("#toc-blog").html();
+                const strNew = str.replaceAll('href="', 'href="' + urlPath);
+                $("#toc-blog").html(strNew);
+            }
+        });
     </script>
 @endsection
