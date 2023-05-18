@@ -88,7 +88,7 @@ class BlogController extends Controller
         if (request()->hasFile('blogImage')) {
             $file = request()->file('blogImage');
             $source_path = config('blog.image.image_save_path').'/'.$blog->id.'/';
-            $result=$this->upload->doUploadBlog($source_path, $file, "", [405, 250]);
+            $result=$this->upload->doUploadBlog($source_path, $file, "", []);
             $image=$blog->image;
             $webp_image=$blog->webp_path;
 
