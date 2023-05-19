@@ -2,9 +2,22 @@
     font-family: var(--font-family);
 }
 
+/* Heading */
+h2 {
+    size: 32px;
+    line-height: 48px;
+}
+h2 {
+    size: 28px;
+    line-height: 42px;
+}
+h2 {
+    size: 24px;
+    line-height: 36px;
+}
 /* link */
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -24,7 +37,7 @@ a{
 }
 
 .hidden {
-    display: none!important;
+    display: none !important;
 }
 
 /* For screens smaller than 768px (mobile devices) */
