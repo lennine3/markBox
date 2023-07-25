@@ -80,7 +80,7 @@
 }
 
 .headerContactBtn {
-    background-color: #FF3767;
+    background-color: #0DC7D6;
     color: #fff !important;
     border-radius: 4px;
     padding: 6px 12px !important;
@@ -88,8 +88,8 @@
 
 .headerContactBtn:hover {
     background-color: #fff !important;
-    border: 1px solid #FF3767;
-    color: #FF3767 !important;
+    border: 1px solid #0DC7D6;
+    color: #0DC7D6 !important;
 }
 
 /* mobile header */

@@ -5,7 +5,7 @@
 .toolChatCall {
     width: 100%;
     height: 40px;
-    background: #FF3767;
+    background: #0DC7D6;
     bottom: 0;
     position: absolute;
     color: #ffffff;
@@ -37,7 +37,7 @@
     width: 99px;
     height: 50px;
     padding: 9px 0 0 11px;
-    background: #FF3767;
+    background: #0DC7D6;
     text-align: left;
     position: absolute;
     font-size: 10px;
@@ -48,7 +48,7 @@
 .round-comment::after {
     position: absolute;
     content: "";
-    border-top: 15px solid #FF3767;
+    border-top: 15px solid #0DC7D6;
     border-right: 30px solid transparent;
     top: 40px;
     left: 0px;

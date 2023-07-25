@@ -612,7 +612,7 @@ div #accordion {
 .pricingSaleContain {
     width: 330px;
     height: 32px;
-    background: #FF3767;
+    background: #0DC7D6;
     text-align: center;
 }
 
@@ -727,16 +727,16 @@ div #accordion {
 
 .btnPricing {
     color: #fff;
-    background-color: #FF3767;
+    background-color: #0DC7D6;
     border-radius: 4px;
     transition: 0.7s all ease;
     margin-top: 1.5rem;
 }
 
 .btnPricing:hover {
-    color: #FF3767;
+    color: #0DC7D6;
     background-color: #fff;
-    border: 1px solid #FF3767;
+    border: 1px solid #0DC7D6;
 }
 
 /* .pricingContainer {
