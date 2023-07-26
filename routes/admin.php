@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Response;
 // });
 // Route::get('/admin/dashboard', [UserController::class, 'index']);
 
-Route::prefix('admin')->middleware(['auth','RegisterAdminMenuServiceProvider','locale'])->group(function () {
+Route::prefix('admin')->middleware(['auth','RegisterAdminMenuServiceProvider'])->group(function () {
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
     Route::get('/banner', 'AdminController@banner')->name('admin.banner');
     Route::post('/banner/upload-video','AdminController@processBannerVideo')->name('admin.banner.video-store');
