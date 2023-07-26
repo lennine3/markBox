@@ -8,13 +8,13 @@
 @endsection
 
 @section('meta')
+    @include('meta.blog-meta')
 @endsection
 
 @section('content')
     <section>
         <div class="blogDetailHeadBanner">
-            <img class="imgBannerBlogDetail" data-src="/public/storage/editor/blog/toyota-fortuner.webp"
-                alt="{{ @$blogData->title }}"
+            <img class="imgBannerBlogDetail" alt="{{ @$blogData->title }}"
                 src="{{ @$blogData->image ? asset(config('blog.image.path') . $blogData->id . '/' . $blogData->image) : asset('admin/assets/img/no-image.jpeg') }}">
         </div>
     </section>
