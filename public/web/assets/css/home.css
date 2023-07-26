@@ -9,6 +9,11 @@
 }
 
 /* Banner */
+.videoBanner {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 .bannerContain {
     height: 700px;
 }
@@ -87,14 +92,14 @@
 }
 
 .seoServiceRightContain {
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
     padding: 120px 160px;
 }
 
 .bigFrame {
     width: 335px;
     height: 408px;
-    background-color: #ECECEC;
+    background-color: #ececec;
     border-radius: 12px;
 }
 
@@ -129,7 +134,7 @@
     font-family: var(--font-family-semi-bold);
     font-size: 12px;
     line-height: 15px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 4px;
     width: 145px;
     transition: all ease 0.5s;
@@ -168,7 +173,7 @@
 .thirdFrame {
     width: 335px;
     height: 241px;
-    background-color: #ECECEC;
+    background-color: #ececec;
     border-radius: 12px;
 }
 
@@ -213,7 +218,7 @@
     font-family: var(--font-family-semi-bold);
     font-size: 12px;
     line-height: 15px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 4px;
     width: 110px;
     height: 28px;
@@ -240,7 +245,6 @@
 .btnBuyNowThirdFrame:hover {
     border: 1px solid #000000;
 }
-
 
 /* service Category start */
 .homeMarketingContainer {
@@ -310,7 +314,7 @@
     font-size: 16px;
     line-height: 24px;
     text-decoration: none;
-    color: #A30DFF;
+    color: #a30dff;
     transition: all ease 0.5s;
 }
 
@@ -332,7 +336,7 @@
 .homeFormTitle {
     margin-bottom: 36px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .homeFormInput {
@@ -430,7 +434,7 @@ select {
 /* faq start */
 .faqBackground {
     /* background-color: #F6F6F6; */
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
 }
 
 .faqContainer {
@@ -452,11 +456,11 @@ select {
 .faqIcon {
     width: 16px;
 }
-.faqCollapseBox:not(:first-child) .faqCollapseTitleContain{
+.faqCollapseBox:not(:first-child) .faqCollapseTitleContain {
     margin: 30px 0 0;
 }
 
-.faqCollapseBodyContent{
+.faqCollapseBodyContent {
     margin-top: 24px;
 }
 
@@ -565,7 +569,7 @@ div #accordion {
 }
 
 .quotationSelectBox {
-    background: #E6F1FF;
+    background: #e6f1ff;
     border-radius: 8px 8px 0px 0px;
     padding: 20px 35px 16px;
 }
@@ -612,7 +616,7 @@ div #accordion {
 .pricingSaleContain {
     width: 330px;
     height: 32px;
-    background: #0DC7D6;
+    background: #0dc7d6;
     text-align: center;
 }
 
@@ -632,7 +636,7 @@ div #accordion {
 
 .pricingHeadingContainer {
     padding: 34px 0 21px;
-    background: #FFF3F6;
+    background: #fff3f6;
     border-radius: 12px 12px 0px 0px;
     width: 330px;
 }
@@ -667,7 +671,7 @@ div #accordion {
 
 .pricingList {
     padding: 0;
-    list-style-image: url('../../assets/image/logo/check.svg');
+    list-style-image: url("../../assets/image/logo/check.svg");
     list-style-position: inside;
     margin: 16px auto;
 }
@@ -689,7 +693,7 @@ div #accordion {
     position: relative;
     width: 330px;
     /* height: 535px; */
-    transition: .3s all;
+    transition: 0.3s all;
 }
 
 .pricingTableFoldTrigger {
@@ -727,16 +731,16 @@ div #accordion {
 
 .btnPricing {
     color: #fff;
-    background-color: #0DC7D6;
+    background-color: #0dc7d6;
     border-radius: 4px;
     transition: 0.7s all ease;
     margin-top: 1.5rem;
 }
 
 .btnPricing:hover {
-    color: #0DC7D6;
+    color: #0dc7d6;
     background-color: #fff;
-    border: 1px solid #0DC7D6;
+    border: 1px solid #0dc7d6;
 }
 
 /* .pricingContainer {
@@ -770,7 +774,6 @@ div #accordion {
 }
 
 @media only screen and (max-width: 1299px) {
-
     /* about Us */
     .aboutUsContain {
         padding-top: 60px;
@@ -839,7 +842,6 @@ div #accordion {
         padding-bottom: 72px;
     }
 
-
     /* faq */
     .faqContainer {
         max-width: 720px;
@@ -857,7 +859,6 @@ div #accordion {
 
 /* For screens smaller than 768px (mobile devices) */
 @media only screen and (max-width: 767px) {
-
     /* home marketing */
 
     .homeMarketingBoxContain:not(:last-child) {

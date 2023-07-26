@@ -8,12 +8,16 @@ use App\Models\PricingTable;
 use Illuminate\Support\Arr;
 use App\Models\SectionInfo;
 use App\Models\DesignService;
+use App\Models\Banner;
+use App\Libraries\Upload;
 
 class AdminController extends Controller
 {
     private $pricingTable;
+    private $upload;
     public function __construct()
     {
+        $this->upload=new Upload();
         $this->pricingTable= new PricingTable();
     }
     public function dashboard()
@@ -27,7 +31,7 @@ class AdminController extends Controller
         $webDesignInfo=SectionInfo::findOrFail(1);
         $aboutInfo=SectionInfo::findOrFail(7);
         $designService=DesignService::all();
-        return view('admin.home.index', compact('faq', 'pricingTable','webDesignInfo','designService','aboutInfo'));
+        return view('admin.home.index', compact('faq', 'pricingTable', 'webDesignInfo', 'designService', 'aboutInfo'));
     }
     public function pricingEdit(PricingTable $pricingTableData)
     {
@@ -36,7 +40,7 @@ class AdminController extends Controller
         $webDesignInfo=SectionInfo::findOrFail(1);
         $aboutInfo=SectionInfo::findOrFail(7);
         $designService=DesignService::all();
-        return view('admin.home.index', compact('faq', 'pricingTable', 'pricingTableData','webDesignInfo','aboutInfo','designService'));
+        return view('admin.home.index', compact('faq', 'pricingTable', 'pricingTableData', 'webDesignInfo', 'aboutInfo', 'designService'));
     }
     public function processFaqQuestion(Request $request)
     {
@@ -73,5 +77,51 @@ class AdminController extends Controller
             'message' => 'Đã thêm dữ liệu thành công',
             'redirect' => route('admin.home-setting'), // Replace "desired.route.name" with the name of your desired route
         ]);
+    }
+
+    public function banner()
+    {
+        $banner=Banner::first();
+        return view('admin.banner.banner', compact('banner'));
+    }
+
+    public function processBannerVideo(Request $request)
+    {
+        $video = $request->file('video');
+        $filename = time().'.'.$video->getClientOriginalExtension();
+        $path = $video->move(public_path('storage/banner/videos'),$filename);
+        if ($request->banner_id!=null) {
+            $landingPage=Banner::find($request->banner_id);
+            $landingPage->video=$filename;
+            $landingPage->save();
+        } else {
+            $landingPage=new Banner();
+            $landingPage->video=$filename;
+            $landingPage->save();
+        }
+        return response()->json(['path' => $path,'message' => 'Đã thay đổi banner']);
+    }
+    public function processBannerImage(Request $request)
+    {
+        $file = request()->file('image');
+        $source_path ='/banner/image/';
+        $result=$this->upload->doUpload($source_path, $file, "", []);
+        if ($request->banner_id!=null) {
+            $banner=Banner::find($request->banner_id);
+            $banner->image=$result;
+            $banner->save();
+        } else {
+            $banner=new Banner();
+            $banner->image=$result;
+            $banner->save();
+        }
+        return response()->json(['path' => $source_path.$result,'message' => 'Đã thay đổi banner']);
+    }
+    public function changeType(Request $request)
+    {
+        $banner=Banner::find(1);
+        $banner->type=$request->selectedValue;
+        $banner->save();
+        return response()->json(['status' => true,'message' => 'Đã thay đổi video banner']);
     }
 }

@@ -14,16 +14,20 @@ use App\Models\PricingTable;
 use App\Models\Faq;
 use App\Models\SectionInfo;
 use App\Models\DesignService;
-
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\App;
+use App\Models\Banner;
 class HomeController extends Controller
 {
     private $setting;
     private $blog;
+    private $blogCategory;
     public function __construct()
     {
         // $this->middleware('auth');
         $this->setting= new Setting();
         $this->blog = new Blog();
+        $this->blogCategory = new BlogCategory();
     }
 
     /**
@@ -33,6 +37,7 @@ class HomeController extends Controller
      */
     public function home()
     {
+        $banner=Banner::first();
         $webDesignInfo=SectionInfo::findOrFail(1);
         $designService=DesignService::all();
 
@@ -43,7 +48,7 @@ class HomeController extends Controller
         $marketingService=Blog::where('blog_Category_id', 2)->status('A')->get();
         $marketingBlog=Blog::where('blog_Category_id', 1)->status('A')->get();
         // dd($marketingBlog);
-        return view('home', compact('pricingTable', 'faq', 'marketingBlog', 'marketingService','webDesignInfo','designService','aboutInfo'));
+        return view('home', compact('banner','pricingTable', 'faq', 'marketingBlog', 'marketingService', 'webDesignInfo', 'designService', 'aboutInfo'));
     }
     public function handleURL($alias = '')
     {
@@ -65,6 +70,15 @@ class HomeController extends Controller
             return $response;
         }
         return $this->get404();
+    }
+    public function get404()
+    {
+        abort(404);
+    }
+    public function changeLanguage($language)
+    {
+        session(['website_language' => $language]);
+        return redirect()->back();
     }
     public function processContact()
     {
@@ -95,11 +109,16 @@ class HomeController extends Controller
         ]);
         return response()->json(['success' => 'Cảm ơn bạn đã gửi phản hồi đến chúng tôi.','message'=>'success']);
     }
+    public function blogCategory($params)
+    {
+        $blog_category=$this->blogCategory->findBySlugOrId($params);
+        return view('web.blog.blogCategory', compact('blog_category'));
+    }
     public function blogDetail($params)
     {
         $blogData=$this->blog->findBySlugOrId($params);
-        $relatedBlog=$this->blog->get_blogs_related(4,$blogData->blog_category_id,$blogData->id);
-        return view('web.blog.blogDetail', compact('blogData','relatedBlog'));
+        $relatedBlog=$this->blog->get_blogs_related(4, $blogData->blog_category_id, $blogData->id);
+        return view('web.blog.blogDetail', compact('blogData', 'relatedBlog'));
     }
     public function clearCache()
     {

@@ -48,6 +48,15 @@
                     </div>
                 </a>
             </li>
+            <li
+                class="menu {{ $routeName == 'admin.banner' ? 'active' : '' }}">
+                <a href="{{ route('admin.banner') }}" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <i data-feather="image"></i>
+                        <span>Banner</span>
+                    </div>
+                </a>
+            </li>
             <li class="menu menu-heading">
                 <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

@@ -14,7 +14,15 @@
 @section('content')
     <section>
         <div class="bannerContain">
-            <img src="{{ asset('web/assets/image/home/banner.png') }}" alt="">
+            @if ($banner->type == 'image')
+                <img src="{{ @$banner->image ? asset('storage/banner/image/' . $banner->image) : asset('web/assets/image/home/banner.png') }}"
+                    alt="">
+            @else
+                <video id="video-player" autoplay muted loop class="videoBanner" loading="lazy">
+                    <source src="{{ asset('storage/banner/videos/' . @$banner->video) }}" type="video/mp4">
+                </video>
+            @endif
+            {{-- <img src="{{ asset('web/assets/image/home/banner.png') }}" alt=""> --}}
         </div>
     </section>
     <section class="aboutUsSection" id="aboutUsSection">
