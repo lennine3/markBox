@@ -13,10 +13,10 @@
                         <a href="{{ @$generals['SOCIAL']['facebook'] }}" class="socialTextFooter"><img
                                 src="{{ asset('web/assets/image/logo/face.svg') }}" alt=""></a>
                     </div>
-                    <div class="socialIconBox">
+                    {{-- <div class="socialIconBox">
                         <a href="{{ @$generals['SOCIAL']['instagram'] }}" class="socialTextFooter"><img
                                 src="{{ asset('web/assets/image/logo/insta.svg') }}" alt=""></a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -41,12 +41,8 @@
                     <div class="socialTextAlign">
                         <div class="footerDescText"> Theo dõi chúng tôi tại </div>
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-6">
+                            <div class="col-lg-12 col-md-12 col-12">
                                 <a href="{{ @$generals['SOCIAL']['facebook'] }}" class="socialTextFooter">Facebook</a>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-6">
-                                <a href="{{ @$generals['SOCIAL']['instagram'] }}"
-                                    class="socialTextFooter">Instagram</a>
                             </div>
                         </div>
                         {{-- <div class="footerDescText footerWebDesign"> Dịch vụ thiết kế website </div>

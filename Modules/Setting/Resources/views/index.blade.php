@@ -1,5 +1,6 @@
 @php
     $shop = !empty($generals['SHOP']) ? $generals['SHOP'] : [];
+    $social = !empty($generals['SOCIAL']) ? $generals['SOCIAL'] : [];
 @endphp
 @extends('layouts.layout')
 @section('style')
