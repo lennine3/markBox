@@ -21,7 +21,7 @@
 
     {{-- footer --}}
     @include('layouts.web.footer')
-    @include('layouts.web.toolchat-mobile')
+    {{-- @include('layouts.web.toolchat-mobile') --}}
 </body>
 
 

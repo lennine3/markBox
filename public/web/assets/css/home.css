@@ -859,6 +859,12 @@ div #accordion {
 
 /* For screens smaller than 768px (mobile devices) */
 @media only screen and (max-width: 767px) {
+    /* banner */
+
+    .bannerContain {
+        height: 615px;
+    }
+
     /* home marketing */
 
     .homeMarketingBoxContain:not(:last-child) {
