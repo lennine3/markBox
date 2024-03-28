@@ -10,9 +10,9 @@ class Upload
 {
     public function doUpload($path, $file, $name = "", $resize = false, $size = false, $insertLogo=false)
     {
-        $logoPath='public/admin/assets/img/logo/waterMark.png';
-        $logo = Image::make($logoPath);
-        $logo->resize(210, 110);
+        // $logoPath='public/admin/assets/img/logo/waterMark.png';
+        // $logo = Image::make($logoPath);
+        // $logo->resize(210, 110);
 
         if ($name == "") {
             $name = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
@@ -35,7 +35,7 @@ class Upload
         }
 
         $image = Image::make($file->getRealPath());
-        $insertLogo ? $image->insert($logo, 'center') : '';
+        // $insertLogo ? $image->insert($logo, 'center') : '';
         $height = $image->height();
         $width = $image->width();
         if ($resize) {
@@ -90,10 +90,9 @@ class Upload
 
     public function doUploadBlog($path, $file, $name = "", $resize = false, $size = false, $insertLogo=false)
     {
-        $logoPath='public/admin/assets/img/logo/waterMark.png';
-        $logo = Image::make($logoPath);
-        $logo->resize(210, 110);
-
+        // $logoPath='public/admin/assets/img/logo/waterMark.png';
+        // $logo = Image::make($logoPath);
+        // $logo->resize(210, 110);
         if ($name == "") {
             $name = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
             $file_name = StripSlug($name) . '.' . $file->getClientOriginalExtension();
@@ -109,7 +108,7 @@ class Upload
         $image = $file->getRealPath();
 
         $image = Image::make($file->getRealPath());
-        $insertLogo ? $image->insert($logo, 'center') : '';
+        // $insertLogo ? $image->insert($logo, 'center') : '';
         $height = $image->height();
         $width = $image->width();
         if ($resize) {
