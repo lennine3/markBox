@@ -86,7 +86,7 @@
                 <h2 class="quotationTitle titleText"> Bảng giá dịch vụ marketing </h2>
                 <div class="d-flex justify-content-center"> <span class="quotationDesc"> Bảng giá được thiết kế dựa trên
                         nhu cầu tùy chọn của từng khách hàng
-                        Áp dụng đến 31/12/2023 </span> </div>
+                        Áp dụng đến 31/12/2024 </span> </div>
                 <div class="d-flex justify-content-center">
                     <hr class="quotationSeparateLine">
                 </div>
